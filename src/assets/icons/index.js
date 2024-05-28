@@ -6,7 +6,9 @@ import CheckMarkIcon from "./CheckMarkIcon";
 import ChevronUpIcon from "./ChevronUpIcon";
 import CloseIcon from "./CloseIcon";
 import CloseWhiteIcon from "./CloseWhiteIcon";
+import CopyIcon from "./CopyIcon";
 import DiscordIcon from "./DiscordIcon";
+import DownArrowIcon from "./DownArrowIcon";
 import FavouritesIcon from "./FavouritesIcon";
 import HeartIcon from "./HeartIcon";
 import InstagramIcon from "./InstagramIcon";
@@ -19,6 +21,7 @@ import SiteIcon from "./SiteIcon";
 import TwitterIcon from "./TwitterIcon";
 import VKontaktIcon from "./VKontaktIcon";
 import WhiteHeartIcon from "./WhiteHeartIcon";
+import LikedIcon from "./LikedIcon";
 
 export {
     SiteIcon, MenuIcon, SearchIcon, HeartIcon, CartIcon, FavouritesIcon,
@@ -26,5 +29,6 @@ export {
     ChevronUpIcon,
     InstagramIcon, TwitterIcon, DiscordIcon, VKontaktIcon,
     CheckMarkIcon, CloseIcon, MinusIcon, PlusIcon, BlackHeartIcon,
-    CloseWhiteIcon, ArrowBackIcon, WhiteHeartIcon
+    CloseWhiteIcon, ArrowBackIcon, WhiteHeartIcon, DownArrowIcon,
+    CopyIcon, LikedIcon
 }

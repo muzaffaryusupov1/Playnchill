@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux"
 import { CartCheckout, CartItems } from "./components"
 import { useNavigate } from "react-router-dom"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { useUser } from "@clerk/clerk-react";
 
 function Cart() {
     const { items } = useSelector(state => state.cart)
     const navigate = useNavigate()
+    const { user } = useUser();
 
     const handleHome = () => {
         navigate('/')
@@ -32,21 +35,35 @@ function Cart() {
                             </div>
                             <div className="flex">
                                 <div className="cart-main">
-                                    <div className="mb-7">
-                                        <div className="relative w-[893px]">
-                                            <div className="absolute z-0 w-[893px] h-[244px] rounded-2xl">
-                                                <img src="/cart/cart-img1.png" alt="cart img" className='w-full h-full object-contain' />
+                                    {
+                                        user ? null :
+                                            <div className="mb-7">
+                                                <div className="relative w-[893px]">
+                                                    <div className="absolute z-0 w-[893px] h-[244px] rounded-2xl">
+                                                        <img src="/cart/cart-img1.png" alt="cart img" className='w-full h-full object-contain' />
+                                                    </div>
+                                                    <div className='relative z-10 p-8'>
+                                                        <h3 className='font-extrabold text-3xl text-white'>Войдите или зарегистрируйтесь</h3>
+                                                        <p className='font-medium text-xl text-white w-[603px] mt-3 mb-7'>
+                                                            Вы сможете накапливать <span className='font-extrabold'>бонусные рубли </span>
+                                                            и использовать их при оплате до <span className='font-extrabold'>50% </span> стоимости товаров.
+                                                        </p>
+                                                        <SignedOut>
+                                                            <SignInButton mode='modal'>
+                                                                <button className='bg-white rounded-xl py-3 px-7 font-light text-base text-black hover:bg-transparent hover:text-white border border-solid border-transparent hover:border-white ease-in duration-200'>Войти</button>
+                                                            </SignInButton>
+                                                        </SignedOut>
+                                                        <SignedIn >
+                                                            <UserButton appearance={{
+                                                                elements: {
+                                                                    avatarBox: 'w-9 h-9',
+                                                                }
+                                                            }} />
+                                                        </SignedIn>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className='relative z-10 p-8'>
-                                                <h3 className='font-extrabold text-3xl text-white'>Войдите или зарегистрируйтесь</h3>
-                                                <p className='font-medium text-xl text-white w-[603px] mt-3 mb-7'>
-                                                    Вы сможете накапливать <span className='font-extrabold'>бонусные рубли </span>
-                                                    и использовать их при оплате до <span className='font-extrabold'>50% </span> стоимости товаров.
-                                                </p>
-                                                <button className='bg-white rounded-xl py-3 px-7 font-light text-base text-black hover:bg-transparent hover:text-white border border-solid border-transparent hover:border-white ease-in duration-200'>Войти</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    }
                                     <div className="mb-7">
                                         <CartItems />
                                     </div>

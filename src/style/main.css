@@ -23,7 +23,8 @@
 
 @layer base {
     :root {
-        --bgbackground: '#ffffff19'
+        --bgbackground: '#ffffff19';
+        --bgmodal: 0 0 0 0.6;
     }
 }
 
@@ -234,4 +235,30 @@ body {
     height: 100%;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(191, 187, 187);
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.wrapper:has(.modal) {
+    transition: all 0.2s ease-in-out;
 }

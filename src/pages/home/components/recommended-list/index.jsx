@@ -1,13 +1,27 @@
-
 import { Link } from 'react-router-dom'
-import { FavouritesIcon } from '../../../../assets/icons'
-import { useSelector } from 'react-redux'
+import { FavouritesIcon, LikedIcon } from '../../../../assets/icons'
+import { useDispatch, useSelector } from 'react-redux'
 import RecommendedListSkeleton from './components/RecommendedListSkeleton'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
+import { addFavorite, removeFavorite } from '../../../../store/slices/favourite'
 
 
 function RecommendedList() {
     const { productsRecommended } = useSelector(state => state.home)
+    const [active, setActive] = useState(false)
+    const dispatch = useDispatch()
 
+    const handleAddOrder = (item) => {
+        dispatch(addFavorite(item))
+        toast.success('Sevimlilarga qo\'shildi')
+        setActive(true)
+    }
+
+    const handleNoOrder = (id) => {
+        dispatch(removeFavorite(id))
+        setActive(false)
+    }
 
     return (
         <section className='mt-24 mb-6'>
@@ -36,11 +50,11 @@ function RecommendedList() {
                                             <div>
                                                 <p className="font-normal text-base text-white mb-2 h-12 max-[574px]:w-2/4 max-[574px]:h-full max-md:text-sm max-[574px]:text-xs max-[465px]:text-[12px] max-[465px]:w-full">{item.title.split(' ').slice(0, 3).join(' ')}</p>
                                             </div>
-                                            {/* <button className='bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-10 max-[388px]:top-[76%]'>
-                                            <FavouritesIcon />
-                                            </button> */}
-                                            <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]'>
+                                            <button className={active ? "group-hover:hidden hidden" : 'hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]'} onClick={() => handleAddOrder(item)}>
                                                 <FavouritesIcon />
+                                            </button>
+                                            <button className={active ? 'hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]' : "group-hover:hidden hidden"} onClick={(id) => handleNoOrder(item.id)}>
+                                                <LikedIcon />
                                             </button>
                                             <button className='hidden group-hover:block absolute bottom-1/4 max-[1219px]:bottom-[170px] max-[1200px]:w-10/12 max-md:text-base max-md:h-10 max-md:p-1 max-[684px]:bottom-32 max-[670px]:bottom-36 max-[654px]:w-[260px] max-[642px]:bottom-44 max-[642px]:w-[250px max-[604px]:w-[220px] max-[574px]:hidden h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 ease-in-out duration-300  hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg' >
                                                 В корзину

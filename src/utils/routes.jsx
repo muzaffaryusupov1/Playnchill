@@ -1,4 +1,4 @@
-import { Cart, Categories, Favourites, HomePage, NotFoundPage, ProductPage } from "../pages";
+import { Cart, Categories, Favourites, HomePage, NotFoundPage, ProductPage, SupportPage } from "../pages";
 
 export const routes = [
     {
@@ -24,11 +24,16 @@ export const routes = [
     {
         id: 5,
         component: <Categories />,
-        path: '/categories'
+        path: '/category/:id'
     },
     {
         id: 6,
         component: <Favourites />,
         path: '/favourites'
+    },
+    {
+        id: 7,
+        component: <SupportPage />,
+        path: '/Support'
     },
 ]

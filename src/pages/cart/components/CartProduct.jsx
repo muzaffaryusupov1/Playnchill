@@ -34,7 +34,7 @@ function CartProduct({ product }) {
                         <p className='font-bold text-2xl text-lime-500'>-{discount}%</p>
                         <p className='font-bold text-2xl text-neutral-500 opacity-35 line-through'>{oldPrice.toLocaleString()} Р</p>
                     </div>
-                    <div className="w-[200px]">
+                    <div className="w-[350px]">
                         <p>{desc.split(' ').slice(0, 10).join(' ')}</p>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { ProductHeader, ReleatedItems, TabMenu } from './components'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { productGet } from '../../store/actions/productActions'
+import { productGet, productRecommendeds } from '../../store/actions/productActions'
 import PageLoading from '../../components/PageLoading'
 
 function ProductPage() {
@@ -13,6 +13,10 @@ function ProductPage() {
     useEffect(() => {
         dispatch(productGet(slug))
     }, [slug])
+
+    useEffect(() => {
+        dispatch(productRecommendeds(product?.category?.id))
+    }, [product])
 
     if (loading || !product.id) {
         return <PageLoading />

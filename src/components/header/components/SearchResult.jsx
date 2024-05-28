@@ -8,7 +8,7 @@ function SearchResult() {
     return (
         <>
             <SearchInput setResult={setResult} />
-            <div className={result.length <= 0 ? 'hidden opacity-0' : 'w-[500px] bg-slate-800 flex flex-col rounded-xl mt-4 max-h-[300px] absolute p-3 opacity-100'}>
+            <div className={result.length === 0 ? 'hidden opacity-0' : 'w-[500px] bg-slate-800 flex flex-col rounded-xl mt-4 max-h-[300px] absolute p-3 opacity-100 overflow-y-scroll'}>
                 {
                     result.map((results, id) => {
                         return (

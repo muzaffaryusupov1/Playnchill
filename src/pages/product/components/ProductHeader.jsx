@@ -5,6 +5,12 @@ import { imgModalOpen } from '../../../store/slices/imgmodal'
 import { addCart } from '../../../store/slices/cart'
 import { toast } from 'react-toastify'
 import { addFavorite } from '../../../store/slices/favourite'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import '../../../style/main.css';
+import { Navigation } from 'swiper/modules';
+
 
 function ProductHeader({ product }) {
     const dispatch = useDispatch()
@@ -73,14 +79,18 @@ function ProductHeader({ product }) {
                             </div>
                         </div>
                     </div>
-                    <div className="flex gap-2 my-20">
-                        {
-                            product.images.map((item, key) => (
-                                <div className='w-[297px] h-[167px] rounded-2xl overflow-hidden cursor-zoom-in' key={key} onClick={handleModal}>
-                                    <img src={item} alt="product img" className='w-full h-full object-cover' />
-                                </div>
-                            ))
-                        }
+                    <div className="my-20 w-[75%]">
+                        <Swiper slidesPerView={3} modules={[Navigation]}>
+                            {
+                                product.images.map((item, key) => (
+                                    <SwiperSlide className='h-44' onClick={handleModal}>
+                                        <div key={key} className='w-[297px] h-[167px] rounded-2xl overflow-hidden cursor-zoom-in hover:scale-105 ease-out duration-300'>
+                                            <img src={item} alt="product img" className='w-full h-full object-cover' />
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
                     </div>
                 </div>
             </div>
