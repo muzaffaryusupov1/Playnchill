@@ -2,6 +2,7 @@ import React from 'react'
 import { FavouritesIcon } from '../../../../assets/icons'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import StockSkeleton from './StockSkeleton'
 
 function Stock() {
   const { inStock } = useSelector(state => state.home)
@@ -16,7 +17,7 @@ function Stock() {
           </div>
           <div className='flex flex-wrap gap-5 max-[710px]:gap-2'>
             {
-              inStock.list.map(item => (
+              inStock.loading ? <StockSkeleton cards={2} /> : inStock.list.map(item => (
                 <div className="mb-7 max-[710px]:mb-2 group relative" key={item.id}>
                   <Link to={`/product/${item.slug}`}>
                     <div className='w-[620px] h-[319px] rounded-2xl overflow-hidden max-[1290px]:w-[590px] max-[1230px]:w-[550px] max-[1150px]:w-[500px] max-[1050px]:w-[460px] max-[1050px]:h-[230px] max-[970px]:w-[420px] max-[970px]:h-[300px] max-[890px]:w-[380px] max-[890px]:h-[280px] max-[810px]:w-[330px] max-[810px]:h-[210px] max-[710px]:w-[300px] max-[710px]:h-[190px] max-[638px]:w-[600px] max-[638px]:h-[300px] max-[628px]:w-[550px] max-[579px]:w-[490px] max-[579px]:h-[250px] max-[519px]:w-[410px] max-[450px]:w-full max-[450px]:h-[200px]'>

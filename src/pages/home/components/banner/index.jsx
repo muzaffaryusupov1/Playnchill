@@ -14,10 +14,8 @@ function Banner() {
         <div className='banner'>
             <div className="container">
                 <Swiper
-                    modules={[Pagination, Navigation, Autoplay]} autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }} navigation={true} className="mySwiper">
+                    modules={[Pagination, Navigation, Autoplay]}
+                     className="mySwiper">
                     <div className='relative flex items-end'>
                         {
                             banners.loading ? <Skeleton width={1260} height={700} baseColor='gray' className='opacity-70' /> :

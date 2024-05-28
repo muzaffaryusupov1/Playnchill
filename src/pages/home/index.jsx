@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Banner, Blog, Card, Product, RecommendedList, Stock } from './components'
+import { Banner, Card, Product, RecommendedList, Stock } from './components'
 import { useDispatch } from 'react-redux'
 import { getBannersList, getCardList, getProductRecommendedList, getProductsList, getStockList } from '../../store/actions/homeActions'
 
@@ -22,7 +22,6 @@ function HomePage() {
             <Card />
             <Product />
             <Stock />
-            <Blog />
         </div>
     )
 }

@@ -120,62 +120,10 @@ body {
     object-fit: contain;
 }
 
-
-.swiper-button-prev {
-    padding: 30px;
-    width: 50px;
-    height: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background: rgba(196, 196, 196, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    border-radius: 100%;
-    -webkit-transition: background 0.3s;
-    -o-transition: background 0.3s;
-    transition: background 0.3s
+.two:not(:last-child){
+    margin-right: 10px;
 }
 
-.swiper-button-prev:hover {
-    background: rgba(196, 196, 196, 0.1)
-}
-
-
-.swiper-button-next {
-    padding: 30px;
-    width: 50px;
-    height: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    right: 0;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background: rgba(196, 196, 196, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    border-radius: 100%;
-    -webkit-transition: background 0.3s;
-    -o-transition: background 0.3s;
-    transition: background 0.3s
-}
-
-.swiper-button-next:hover {
-    background: rgba(196, 196, 196, 0.1)
-}
 
 @media (prefers-color-scheme: light) {
     .theme-b.adaptive {

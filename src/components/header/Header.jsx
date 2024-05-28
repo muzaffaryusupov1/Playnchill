@@ -1,21 +1,30 @@
 import { Link } from 'react-router-dom'
-import { CartIcon, CartIconWhite, DownArrowIcon, FavouritesIcon, MobileSearchIcon } from '../../assets/icons'
+import { CartIcon, CartIconWhite, CloseIcon, CloseWhiteIcon, DownArrowIcon, FavouritesIcon, MobileSearchIcon, SearchIcon } from '../../assets/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { SearchResult } from './components'
 import { useEffect } from 'react'
 import { getCategoriesList } from '../../store/actions/homeActions'
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
-
+import { useState } from 'react'
 
 function Header() {
     const { categories } = useSelector(state => state.home)
     const { items } = useSelector(state => state.cart)
+    const [active, setActive] = useState(false)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getCategoriesList())
     }, [])
+
+    const handleActive = () => {
+        setActive(true)
+    }
+
+    const handleClose = () => {
+        setActive(false)
+    }
 
     return (
         <header className='relative z-50'>
@@ -28,7 +37,7 @@ function Header() {
                         </select>
                         <nav className='header-top__nav'>
                             <Link to={'/support'} className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Поддержка</Link>
-                            <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Гарантии</Link>
+                            <Link to={'/advantages'} className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Наши преимущества</Link>
                             <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Как купить</Link>
                             <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Накопительная</Link>
                             <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Заработай</Link>
@@ -52,7 +61,7 @@ function Header() {
                                 <img src="/site.logo.png" alt="site logo" />
                                 <p className="text-3xl font-bold max-md:text-xl">Playnchill</p>
                             </Link>
-                            <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100" data-dropdown-trigger="hover" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100" data-dropdown-trigger="hover" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 max-[843px]:hidden" type="button">
                                 Categories
                                 <DownArrowIcon />
                             </button>
@@ -75,9 +84,20 @@ function Header() {
 
                         </div>
                         <form className='relative'>
-                            <SearchResult />
+                            <SearchResult active={active} />
                         </form>
                         <div className='flex gap-4'>
+                            {
+                                active ? null :
+                                    <button onClick={handleActive} className="relative z-50 hidden max-md:block">
+                                        <MobileSearchIcon />
+                                    </button>
+                            }
+                            {
+                                active ? <button onClick={handleClose} className="relative z-50 hidden max-md:block">
+                                    <CloseWhiteIcon />
+                                </button> : null
+                            }
                             <Link to={'/favourites'} className='flex'>
                                 <button className='max-sm:hidden'><FavouritesIcon /></button>
                             </Link>

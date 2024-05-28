@@ -1,4 +1,4 @@
-import { Cart, Categories, Favourites, HomePage, NotFoundPage, ProductPage, SupportPage } from "../pages";
+import { AdvantagesPage, Cart, Categories, Favourites, HomePage, NotFoundPage, ProductPage, SupportPage } from "../pages";
 
 export const routes = [
     {
@@ -34,6 +34,11 @@ export const routes = [
     {
         id: 7,
         component: <SupportPage />,
-        path: '/Support'
+        path: '/support'
+    },
+    {
+        id: 8,
+        component: <AdvantagesPage />,
+        path: '/advantages'
     },
 ]
