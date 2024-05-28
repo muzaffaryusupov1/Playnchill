@@ -30,12 +30,12 @@ function CartProduct({ product }) {
                 <div className='titles'>
                     <h3 className='font-medium text-2xl text-white mb-3'>{title}</h3>
                     <div className='flex items-center gap-5 mb-10'>
-                        <p className='font-bold text-3xl text-white'>{price.toLocaleString()} Р</p>
+                        <p className='font-bold text-3xl text-white'>{price?.toLocaleString()} Р</p>
                         <p className='font-bold text-2xl text-lime-500'>-{discount}%</p>
-                        <p className='font-bold text-2xl text-neutral-500 opacity-35 line-through'>{oldPrice.toLocaleString()} Р</p>
+                        <p className='font-bold text-2xl text-neutral-500 opacity-35 line-through'>{oldPrice?.toLocaleString()} Р</p>
                     </div>
                     <div className="w-[350px]">
-                        <p>{desc.split(' ').slice(0, 10).join(' ')}</p>
+                        <p>{desc?.split(' ').slice(0, 10).join(' ')}</p>
                     </div>
                 </div>
                 <div className='flex flex-col items-end justify-between'>

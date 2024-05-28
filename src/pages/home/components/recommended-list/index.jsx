@@ -1,26 +1,24 @@
 import { Link } from 'react-router-dom'
-import { FavouritesIcon, LikedIcon } from '../../../../assets/icons'
+import { CartIcon, FavouritesIcon, LikedIcon } from '../../../../assets/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import RecommendedListSkeleton from './components/RecommendedListSkeleton'
-import { useState } from 'react'
 import { toast } from 'react-toastify'
-import { addFavorite, removeFavorite } from '../../../../store/slices/favourite'
+import { addFavorite } from '../../../../store/slices/favourite'
+import { addCart } from '../../../../store/slices/cart'
 
 
 function RecommendedList() {
     const { productsRecommended } = useSelector(state => state.home)
-    const [active, setActive] = useState(false)
     const dispatch = useDispatch()
+
+    const handleAdd = (item) => {
+        dispatch(addCart(item))
+        toast.success('Savatga qo\'shildi')
+    }
 
     const handleAddOrder = (item) => {
         dispatch(addFavorite(item))
         toast.success('Sevimlilarga qo\'shildi')
-        setActive(true)
-    }
-
-    const handleNoOrder = (id) => {
-        dispatch(removeFavorite(id))
-        setActive(false)
     }
 
     return (
@@ -31,7 +29,7 @@ function RecommendedList() {
                         <img src="/recommendedList/toptitle.svg" alt="top title svg" />
                         <img src="/recommendedList/thunder.svg" alt="thunder svg" />
                     </div>
-                    <div className="flex gap-5 max-[1060px]:gap-3 flex-wrap max-[500px]:gap-5 max-[574px]:flex-col">
+                    <div className="flex gap-5 max-[1060px]:gap-3 max-[655px]:gap-1 max-[578px]:gap-5 flex-wrap max-[500px]:gap-5 max-[574px]:flex-col">
                         {
                             productsRecommended.loading ? <RecommendedListSkeleton cards={4} /> :
                                 productsRecommended.list.slice(0, 4).map(item => (
@@ -50,16 +48,14 @@ function RecommendedList() {
                                             <div>
                                                 <p className="font-normal text-base text-white mb-2 h-12 max-[574px]:w-2/4 max-[574px]:h-full max-md:text-sm max-[574px]:text-xs max-[465px]:text-[12px] max-[465px]:w-full">{item.title.split(' ').slice(0, 3).join(' ')}</p>
                                             </div>
-                                            <button className={active ? "group-hover:hidden hidden" : 'hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]'} onClick={() => handleAddOrder(item)}>
+                                            <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:block max-[574px]:top-[86%] max-[574px]:right-0 max-[388px]:top-[75%]' onClick={() => handleAddOrder(item)}>
                                                 <FavouritesIcon />
                                             </button>
-                                            <button className={active ? 'hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]' : "group-hover:hidden hidden"} onClick={(id) => handleNoOrder(item.id)}>
-                                                <LikedIcon />
+                                            <button className='hidden group-hover:block absolute bottom-1/4 max-[1219px]:bottom-[170px] max-[1200px]:w-10/12 max-[895px]:w-[90%] max-[895px]:bottom-[25%] max-[790px]:bottom-[30%] max-[790px]:p-0 max-md:text-base max-md:h-10 max-md:p-1 max-[654px]:w-[260px] max-[648px]:bottom-[100px] max-[642px]:w-[250px max-[604px]:w-[220px] max-[574px]:bottom-0 h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 ease-in-out duration-300 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg max-[574px]:block max-[574px]:w-auto max-[574px]:bg-transparent max-[574px]:hover:border-transparent max-[574px]:right-10 max-[500px]:m-0 max-[500px]:mb-[10px] max-[450px]:mb-0' onClick={() => handleAdd(item)}>
+                                                <span className='max-[574px]:hidden'>В корзину</span>
+                                                <span className='max-[574px]:block'><CartIcon /></span>
                                             </button>
-                                            <button className='hidden group-hover:block absolute bottom-1/4 max-[1219px]:bottom-[170px] max-[1200px]:w-10/12 max-[895px]:w-[90%] max-[895px]:bottom-[25%] max-[790px]:bottom-[30%] max-[790px]:p-0 max-md:text-base max-md:h-10 max-md:p-1 max-[654px]:w-[260px] max-[648px]:bottom-0 max-[642px]:w-[250px max-[604px]:w-[220px] max-[574px]:hidden h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 ease-in-out duration-300  hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg' >
-                                                В корзину
-                                            </button>
-                                            <span className='absolute top-3 max-[574px]:h-8 max-[574px]:right-32 max-[546px]:right-20 max-[574px]:top-[90%] max-[450px]:right-28 max-[420px]:right-20 max-[450px]:h-6 max-[390px]:top-[86%] max-[390px]:right-32 max-[360px]:right-20 max-[312px]:right-14'>
+                                            <span className='absolute top-3 max-[574px]:h-8 max-[574px]:right-32 max-[546px]:right-20 max-[574px]:top-[88%] max-[450px]:right-28 max-[420px]:right-20 max-[450px]:h-6 max-[390px]:top-[86%] max-[390px]:right-32 max-[360px]:right-20 max-[312px]:right-14'>
                                                 {item.isRecommended ? <img src="/recommendedList/listtoptitle.svg" alt="list top title svg" className='w-full h-full' /> : null}
                                             </span>
                                         </div>

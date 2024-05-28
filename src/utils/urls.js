@@ -1,5 +1,5 @@
 export const categoriesList = '/categorys'
-export const bannersList = '/banner'
+export const bannersList = '/products?banner=true'
 export const productRecommendedList = '/products?isRecommended=true'
 export const cardList = '/card'
 export const productsList = '/products'

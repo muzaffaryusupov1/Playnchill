@@ -120,10 +120,6 @@ body {
     object-fit: contain;
 }
 
-.two:not(:last-child){
-    margin-right: 10px;
-}
-
 
 @media (prefers-color-scheme: light) {
     .theme-b.adaptive {
@@ -209,4 +205,8 @@ body {
 
 .wrapper:has(.modal) {
     transition: all 0.2s ease-in-out;
+}
+
+.bg {
+    background: linear-gradient(57deg, #06030f 0%, rgba(6, 3, 15, 0.28) 97.96%);
 }

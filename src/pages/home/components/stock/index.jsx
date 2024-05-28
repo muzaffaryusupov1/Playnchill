@@ -35,7 +35,7 @@ function Stock() {
                   <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]'>
                     <FavouritesIcon />
                   </button>
-                  <button className='hidden group-hover:block bg-lime-500 w-full py-3 rounded-2xl font-bold text-lg text-white border border-solid border-transparent absolute bottom-[33%]'>
+                  <button className='hidden group-hover:block bg-lime-500 w-[400px] py-3 rounded-2xl font-bold text-lg text-white border border-solid border-transparent absolute bottom-[33%] left-28 hover:border hover:border-solid hover:border-white hover:bg-transparent transition-all'>
                     В корзину
                   </button>
                 </div>

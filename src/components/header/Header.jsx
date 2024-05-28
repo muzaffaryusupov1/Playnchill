@@ -36,11 +36,9 @@ function Header() {
                             <option value="2" className='text-black p-1.5 max-[900px]:p-1'>Eng</option>
                         </select>
                         <nav className='header-top__nav'>
-                            <Link to={'/support'} className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Поддержка</Link>
-                            <Link to={'/advantages'} className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Наши преимущества</Link>
-                            <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Как купить</Link>
-                            <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Накопительная</Link>
-                            <Link className='font-medium text-base leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Заработай</Link>
+                            <Link to={'/support'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Поддержка</Link>
+                            <Link to={'/advantages'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Наши преимущества</Link>
+                            <Link to={'/reviews'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Отзывы</Link>
                         </nav>
                         <SignedOut>
                             <SignInButton mode='modal'>
@@ -99,9 +97,13 @@ function Header() {
                                 </button> : null
                             }
                             <Link to={'/favourites'} className='flex'>
-                                <button className='max-sm:hidden'><FavouritesIcon /></button>
+                                <button className='max-sm:hidden relative'><FavouritesIcon />
+                                    {
+                                        items.length >= 1 ?
+                                            <span className="ml-2 bg-black absolute top-[-10px] right-[-10px] text-lime-500 rounded-full p-1">{items.length}</span> : null
+                                    }
+                                </button>
                             </Link>
-                            <button className='hidden max-sm:block'><MobileSearchIcon /></button>
                             <Link to={'/cart'} className='flex'>
                                 <button className="max-sm:hidden relative"><CartIcon />
                                     {
@@ -116,6 +118,20 @@ function Header() {
                                     }
                                 </button>
                             </Link>
+                            <div className='hidden max-md:block'>
+                                <SignedOut>
+                                    <SignInButton mode='modal'>
+                                        <img src="/icon.png" alt="site icon" title='Sign In' className='w-9 h-9 cursor-pointer' />
+                                    </SignInButton>
+                                </SignedOut>
+                                <SignedIn >
+                                    <UserButton appearance={{
+                                        elements: {
+                                            avatarBox: 'w-9 h-9',
+                                        }
+                                    }} />
+                                </SignedIn>
+                            </div>
                         </div>
                     </div>
                 </div>

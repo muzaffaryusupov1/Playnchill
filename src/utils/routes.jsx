@@ -1,4 +1,4 @@
-import { AdvantagesPage, Cart, Categories, Favourites, HomePage, NotFoundPage, ProductPage, SupportPage } from "../pages";
+import { AdvantagesPage, Cart, Categories, Favourites, HomePage, NotFoundPage, ProductPage, ReviewsPage, SupportPage } from "../pages";
 
 export const routes = [
     {
@@ -40,5 +40,10 @@ export const routes = [
         id: 8,
         component: <AdvantagesPage />,
         path: '/advantages'
+    },
+    {
+        id: 9,
+        component: <ReviewsPage />,
+        path: '/reviews'
     },
 ]

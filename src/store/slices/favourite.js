@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items: JSON.parse(localStorage.getItem('cart')) || [],
+    el: JSON.parse(localStorage.getItem('cart')) || [],
     totalPrice: 0,
 }
 
@@ -15,24 +15,24 @@ const favoriteSlice = createSlice({
     initialState,
     reducers: {
         addFavorite: (state, { payload }) => {
-            const isContain = state.items.some(item => item.id === payload.id)
-            const newItems = isContain ? state.items.map(item => item.id === payload.id ? { ...item, qty: item.qty + 1 } : item) : [...state.items, { ...payload, qty: 1 }];
-            state.items = setFavorite(newItems);
+            const isContain = state.el.some(e => e.id === payload.id)
+            const newE = isContain ? state.el.map(e => e.id === payload.id ? { ...e, qty: e.qty + 1 } : e) : [...state.el, { ...payload, qty: 1 }];
+            state.el = setFavorite(newE);
         },
         removeFavorite: (state, { payload }) => {
-            const newItems = state.items.filter(item => item.id !== payload);
-            state.items = setFavorite(newItems);
+            const newE = state.el.filter(e => e.id !== payload);
+            state.el = setFavorite(newE);
         },
         incrementFavorite: (state, { payload }) => {
-            const newItems = state.items.map(item => item.id === payload ? { ...item, qty: item.qty + 1 } : item);
-            state.items = setFavorite(newItems);
+            const newE = state.el.map(e => e.id === payload ? { ...e, qty: e.qty + 1 } : e);
+            state.el = setFavorite(newE);
         },
         decrementFavorite: (state, { payload }) => {
-            const newItems = state.items.map(item => item.id === payload ? { ...item, qty: item.qty === 1 ? 1 : item.qty - 1 } : item);
-            state.items = setFavorite(newItems);
+            const newE = state.el.map(e => e.id === payload ? { ...e, qty: e.qty === 1 ? 1 : e.qty - 1 } : e);
+            state.el = setFavorite(newE);
         },
         removeAll: (state) => {
-            state.items = setFavorite([])
+            state.el = setFavorite([])
         }
     }
 });
