@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartIcon, LikedIcon } from '../../assets/icons'
 import { removeFavorite } from '../../store/slices/favourite'
-import { toast } from 'react-toastify'
 import { addCart } from '../../store/slices/cart'
+import toast from 'react-hot-toast'
 
 function Favourites() {
   const { el } = useSelector(state => state.favourite)
@@ -17,11 +17,12 @@ function Favourites() {
 
   const handleAdd = (item) => {
     dispatch(addCart(item))
-    toast.success('Savatga qo\'shildi')
+    toast.success('Товар успешно добавлен')
   }
 
   const handleUnOrder = (id) => {
     dispatch(removeFavorite(id))
+    toast.error('Item deleted')
   }
 
   return (

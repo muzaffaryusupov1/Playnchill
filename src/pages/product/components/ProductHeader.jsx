@@ -3,13 +3,13 @@ import { CheckMarkIcon, HeartIcon } from '../../../assets/icons'
 import { useDispatch } from 'react-redux'
 import { imgModalOpen } from '../../../store/slices/imgmodal'
 import { addCart } from '../../../store/slices/cart'
-import { toast } from 'react-toastify'
 import { addFavorite } from '../../../store/slices/favourite'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../../../style/main.css';
 import { Navigation } from 'swiper/modules';
+import toast from 'react-hot-toast'
 
 
 function ProductHeader({ product }) {
@@ -24,7 +24,7 @@ function ProductHeader({ product }) {
         toast.success('Savatga qo\'shildi')
     }
 
-    const handleAddOrder = (product) => {
+    const handleAddOrder = () => {
         dispatch(addFavorite(product))
         toast.success('Sevimlilarga qo\'shildi')
     }
@@ -51,7 +51,7 @@ function ProductHeader({ product }) {
                                 {product.oldPrice ? <p className='font-bold text-3xl text-neutral-700 line-through'>{product.oldPrice.toLocaleString()} Р</p> : null}
                             </div>
                             <div className='flex items-center'>
-                                <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500' onClick={() => handleAddOrder(product)}>В избранное</button>
+                                <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500' onClick={handleAddOrder}>В избранное</button>
                                 <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent' onClick={handleAdd}>В корзину</button>
                                 <button className='rounded-full border border-solid border-neutral-700 p-3 hover:border-sky-500 ease-in-out duration-300 hover:svg-sky-500'><HeartIcon /></button>
                             </div>

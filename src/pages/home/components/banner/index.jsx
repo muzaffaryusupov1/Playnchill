@@ -6,7 +6,8 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from 'react-redux';
 import Skeleton from 'react-loading-skeleton';
 import { addCart } from '../../../../store/slices/cart';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
+import { addFavorite } from '../../../../store/slices/favourite';
 
 function Banner() {
     const { banners } = useSelector(state => state.home)
@@ -14,8 +15,14 @@ function Banner() {
 
     const handleAdd = (item) => {
         dispatch(addCart(item))
-        toast.success('Savatga qo\'shildi')
+        toast.success("Товар успешно добавлен")
     }
+
+    const handleAddFavourite = (item) => {
+        dispatch(addFavorite(item))
+        toast.success("Добавлено в избранное")
+    }
+
 
     return (
         <div className='banner'>
@@ -36,7 +43,7 @@ function Banner() {
                                             <img src={item.bannerimg} alt={item.title} className="w-full h-full max-[450px]:object-cover" />
                                         </div>
 
-                                        <div className="absolute left-56 max-lg:pl-10 max-lg:pb-12 pb-32 max-md:pb-5 max-sm:pb-0 max-sm:pl-5 flex-col">
+                                        <div className="absolute pl-28 max-lg:pl-10 max-lg:pb-12 pb-32 max-md:pb-5 max-sm:pb-0 max-sm:pl-5 flex-col">
                                             <div className="mb-5 mr-10 w-[151px] h-[100px] max-lg:mb-2 max-lg:w-40 max-md:w-24 max-sm:w-20 max-sm:h-8 ">
                                                 <img src={item.bannerlogo} alt='img' className='banner-content__img' />
                                             </div>
@@ -50,7 +57,7 @@ function Banner() {
                                             </div>
                                             <div className="flex items-center gap-2.5">
                                                 <button className="rounded-2xl border h-16 border-transparent border-solid hover:border-white hover:bg-transparent hover:text-white py-5 max-lg:py-2 max-md:hidden w-40 bg-white font-semibold text-base text-black ease-in duration-300" onClick={() => handleAdd(item)}>В корзину</button>
-                                                <button className="border h-16 border-white border-solid rounded-2xl py-5 max-lg:py-2 max-md:hidden w-40 font-semibold text-base text-white hover:bg-white hover:text-black hover:border-white ease-in duration-300">В избранное</button>
+                                                <button className="border h-16 border-white border-solid rounded-2xl py-5 max-lg:py-2 max-md:hidden w-40 font-semibold text-base text-white hover:bg-white hover:text-black hover:border-white ease-in duration-300" onClick={() => handleAddFavourite(item)}>В избранное</button>
                                             </div>
                                         </div>
                                     </SwiperSlide>

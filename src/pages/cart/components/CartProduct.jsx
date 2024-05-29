@@ -3,6 +3,7 @@ import { CloseWhiteIcon, WhiteHeartIcon } from "../../../assets/icons"
 import { decrement, increment, removeAll, removeCart } from "../../../store/slices/cart";
 import { useNavigate } from "react-router-dom";
 import Counter from "../../../components/Counter";
+import toast from "react-hot-toast";
 
 
 function CartProduct({ product }) {
@@ -11,6 +12,7 @@ function CartProduct({ product }) {
 
     const handleRemove = () => {
         dispatch(removeCart(id))
+        toast.error('Item deleted')
     }
 
     const handleIncrement = () => {

@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../../assets/icons/index/'
 import FavouritesIcon from '../../../assets/icons/FavouritesIcon'
-import { toast } from 'react-toastify'
 import { useSelector } from 'react-redux'
+import toast from 'react-hot-toast'
 
 function CategoryProducts() {
     const { products } = useSelector(state => state.products)

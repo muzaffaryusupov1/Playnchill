@@ -15,12 +15,12 @@ function Stock() {
             <h3 className="font-semibold text-3xl text-white max-md:text-2xl max-sm:text-xl max-[574px]:mt-5 max-[574px]:text-lg">Акции и скидки
               <span className='text-lime-500'> %</span></h3>
           </div>
-          <div className='flex flex-wrap gap-5 max-[710px]:gap-2'>
+          <div className='flex flex-wrap gap-5 max-[1240px]:gap-3 max-[710px]:gap-2'>
             {
               inStock.loading ? <StockSkeleton cards={2} /> : inStock.list.map(item => (
                 <div className="mb-7 max-[710px]:mb-2 group relative" key={item.id}>
                   <Link to={`/product/${item.slug}`}>
-                    <div className='w-[620px] h-[319px] rounded-2xl overflow-hidden max-[1290px]:w-[590px] max-[1230px]:w-[550px] max-[1150px]:w-[500px] max-[1050px]:w-[460px] max-[1050px]:h-[230px] max-[970px]:w-[420px] max-[970px]:h-[300px] max-[890px]:w-[380px] max-[890px]:h-[280px] max-[810px]:w-[330px] max-[810px]:h-[210px] max-[710px]:w-[300px] max-[710px]:h-[190px] max-[638px]:w-[600px] max-[638px]:h-[300px] max-[628px]:w-[550px] max-[579px]:w-[490px] max-[579px]:h-[250px] max-[519px]:w-[410px] max-[450px]:w-full max-[450px]:h-[200px]'>
+                    <div className='w-[620px] h-[319px] rounded-2xl overflow-hidden max-[1290px]:w-[590px] max-[1230px]:w-[550px] max-[1150px]:w-[500px] max-[1051px]:w-[460px] max-[1050px]:h-[230px] max-[970px]:w-[420px] max-[970px]:h-[300px] max-[890px]:w-[380px] max-[890px]:h-[280px] max-[811px]:w-[330px] max-[811px]:h-[210px] max-[710px]:w-[300px] max-[710px]:h-[190px] max-[638px]:w-[600px] max-[638px]:h-[300px] max-[628px]:w-[550px] max-[579px]:w-[490px] max-[579px]:h-[250px] max-[519px]:w-[410px] max-[450px]:w-full max-[450px]:h-[200px]'>
                       <img src={item.extraimg} alt={item.title} className='w-full h-full object-cover' />
                     </div>
                   </Link>
@@ -35,7 +35,7 @@ function Stock() {
                   <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]'>
                     <FavouritesIcon />
                   </button>
-                  <button className='hidden group-hover:block bg-lime-500 w-[400px] py-3 rounded-2xl font-bold text-lg text-white border border-solid border-transparent absolute bottom-[33%] left-28 hover:border hover:border-solid hover:border-white hover:bg-transparent transition-all'>
+                  <button className='hidden group-hover:block bg-lime-500 w-[400px] py-3 rounded-2xl font-bold text-lg text-white border border-solid border-transparent absolute bottom-[33%] left-28 hover:border hover:border-solid hover:border-white hover:bg-transparent transition-all max-[1240px]:left-20 max-[1150px]:left-16 max-[1051px]:left-20 max-[1051px]:bottom-[40%] max-[1051px]:w-[300px] max-[1051px]:py-2 max-[970px]:bottom-[30%] max-[970px]:left-16 max-[890px]:left-10 max-[811px]:left-4 max-[811px]:bottom-[35%] max-[811px]:py-1 max-[811px]:text-sm max-[811px]:rounded-xl max-[710px]:left-14 max-[710px]:w-[200px] max-[642px]:w-[400px] max-[642px]:left-24 max-[642px]:bottom-[25%] max-[642px]:left-[76px]'>
                     В корзину
                   </button>
                 </div>

@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
-import { CartIcon, CartIconWhite, CloseIcon, CloseWhiteIcon, DownArrowIcon, FavouritesIcon, MobileSearchIcon, SearchIcon } from '../../assets/icons'
+import { CartIcon, CartIconWhite, CloseWhiteIcon, DownArrowIcon, FavouritesIcon, MobileSearchIcon, SearchIcon } from '../../assets/icons'
 import { useDispatch, useSelector } from 'react-redux'
-import { SearchResult } from './components'
 import { useEffect } from 'react'
 import { getCategoriesList } from '../../store/actions/homeActions'
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { useState } from 'react'
+import SearchInput from './components/SearchInput'
 
 function Header() {
     const { categories } = useSelector(state => state.home)
     const { items } = useSelector(state => state.cart)
+    const { el } = useSelector(state => state.favourite)
     const [active, setActive] = useState(false)
 
     const dispatch = useDispatch()
@@ -82,7 +83,7 @@ function Header() {
 
                         </div>
                         <form className='relative'>
-                            <SearchResult active={active} />
+                            <SearchInput active={active} />
                         </form>
                         <div className='flex gap-4'>
                             {
@@ -99,8 +100,8 @@ function Header() {
                             <Link to={'/favourites'} className='flex'>
                                 <button className='max-sm:hidden relative'><FavouritesIcon />
                                     {
-                                        items.length >= 1 ?
-                                            <span className="ml-2 bg-black absolute top-[-10px] right-[-10px] text-lime-500 rounded-full p-1">{items.length}</span> : null
+                                        el.length > 0 &&
+                                        <span className="ml-2 bg-black absolute top-[-10px] right-[-10px] text-lime-500 rounded-full p-1">{el.length}</span>
                                     }
                                 </button>
                             </Link>

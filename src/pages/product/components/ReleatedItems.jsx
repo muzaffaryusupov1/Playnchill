@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addCart } from '../../../store/slices/cart'
 import { addFavorite } from '../../../store/slices/favourite'
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 
 function ReleatedItems() {
   const { recommended } = useSelector(state => state.product)

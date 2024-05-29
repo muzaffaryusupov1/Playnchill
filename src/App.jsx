@@ -3,13 +3,15 @@ import { Footer, Header } from "./components"
 import { ChevronUpIcon } from "./assets/icons"
 import { Route, Routes } from "react-router-dom"
 import { routes } from "./utils/routes"
-import { ToastContainer } from "react-toastify"
 import { useSelector } from "react-redux"
 import { createPortal } from "react-dom"
 import ImgModal from "./components/ImgModal"
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
   const { imgModal } = useSelector(state => state.imgmodal)
+
+  const notify = () => toast('Here is your toast.');
 
   return (
     <>
@@ -26,7 +28,10 @@ function App() {
             <ChevronUpIcon />
           </span>
         </ScrollToTop>
-        <ToastContainer />
+        <Toaster
+          position="top-center"
+          reverseOrder={true}
+        />
         {imgModal && createPortal(<ImgModal />, document.querySelector('.wrapper'))}
       </main>
       <Footer />
