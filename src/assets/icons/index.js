@@ -22,6 +22,7 @@ import TwitterIcon from "./TwitterIcon";
 import VKontaktIcon from "./VKontaktIcon";
 import WhiteHeartIcon from "./WhiteHeartIcon";
 import LikedIcon from "./LikedIcon";
+import HomeIcon from "./HomeIcon";
 
 export {
     SiteIcon, MenuIcon, SearchIcon, HeartIcon, CartIcon, FavouritesIcon,
@@ -30,5 +31,5 @@ export {
     InstagramIcon, TwitterIcon, DiscordIcon, VKontaktIcon,
     CheckMarkIcon, CloseIcon, MinusIcon, PlusIcon, BlackHeartIcon,
     CloseWhiteIcon, ArrowBackIcon, WhiteHeartIcon, DownArrowIcon,
-    CopyIcon, LikedIcon
+    CopyIcon, LikedIcon, HomeIcon
 }

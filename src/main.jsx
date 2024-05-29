@@ -8,7 +8,6 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import React from 'react'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { dark } from "@clerk/themes";
-import { Dropdown } from 'flowbite';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 if (!PUBLISHABLE_KEY) {

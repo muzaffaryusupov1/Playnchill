@@ -1,5 +1,5 @@
 import ScrollToTop from "react-scroll-up"
-import { Footer, Header } from "./components"
+import { Footer, Header, MobileModal } from "./components"
 import { ChevronUpIcon } from "./assets/icons"
 import { Route, Routes } from "react-router-dom"
 import { routes } from "./utils/routes"
@@ -32,6 +32,7 @@ function App() {
           position="top-center"
           reverseOrder={true}
         />
+        <MobileModal/>
         {imgModal && createPortal(<ImgModal />, document.querySelector('.wrapper'))}
       </main>
       <Footer />

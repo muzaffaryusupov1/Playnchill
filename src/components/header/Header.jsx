@@ -37,6 +37,7 @@ function Header() {
                             <option value="2" className='text-black p-1.5 max-[900px]:p-1'>Eng</option>
                         </select>
                         <nav className='header-top__nav'>
+                            <button className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Каталог</button>
                             <Link to={'/support'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Поддержка</Link>
                             <Link to={'/advantages'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Наши преимущества</Link>
                             <Link to={'/reviews'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Отзывы</Link>
@@ -60,27 +61,6 @@ function Header() {
                                 <img src="/site.logo.png" alt="site logo" />
                                 <p className="text-3xl font-bold max-md:text-xl">Playnchill</p>
                             </Link>
-                            <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="100" data-dropdown-trigger="hover" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 max-[843px]:hidden" type="button">
-                                Categories
-                                <DownArrowIcon />
-                            </button>
-
-                            <div id="dropdownDelay" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-
-                                    <li>
-                                        {
-                                            categories.list.map(item => (
-                                                <Link key={item.id} to={`/category/${item.slug}-${item.id}`}>
-                                                    <p className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{item.title}</p>
-                                                </Link>
-                                            ))
-                                        }
-                                    </li>
-
-                                </ul>
-                            </div>
-
                         </div>
                         <form className='relative'>
                             <SearchInput active={active} />
@@ -106,13 +86,7 @@ function Header() {
                                 </button>
                             </Link>
                             <Link to={'/cart'} className='flex'>
-                                <button className="max-sm:hidden relative"><CartIcon />
-                                    {
-                                        items.length >= 1 ?
-                                            <span className="ml-2 bg-black absolute top-[-10px] right-[-10px] text-lime-500 rounded-full p-1">{items.length}</span> : null
-                                    }
-                                </button>
-                                <button className='hidden max-sm:block'><CartIconWhite />
+                                <button className="relative"><CartIcon />
                                     {
                                         items.length >= 1 ?
                                             <span className="ml-2 bg-black absolute top-[-10px] right-[-10px] text-lime-500 rounded-full p-1">{items.length}</span> : null

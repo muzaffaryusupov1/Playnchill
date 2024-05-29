@@ -43,7 +43,7 @@ function TabMenu({ product }) {
     <section className="mt-16">
       <div className="container">
         <div className="tab-menu__wrapper">
-          <div className='w-220px'>
+          <div className='w-220px max-[600px]:overflow-x-scroll'>
             {
               list.map(item => (
                 <button
