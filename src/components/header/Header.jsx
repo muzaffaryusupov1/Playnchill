@@ -1,23 +1,16 @@
 import { Link } from 'react-router-dom'
-import { CartIcon, CartIconWhite, CloseWhiteIcon, DownArrowIcon, FavouritesIcon, MobileSearchIcon, SearchIcon } from '../../assets/icons'
+import { CartIcon, CloseWhiteIcon, FavouritesIcon, MenuIcon, MobileSearchIcon } from '../../assets/icons'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { getCategoriesList } from '../../store/actions/homeActions'
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { useState } from 'react'
 import SearchInput from './components/SearchInput'
+import { categoriesModalOpen } from '../../store/slices/categoriesmodal'
 
 function Header() {
-    const { categories } = useSelector(state => state.home)
     const { items } = useSelector(state => state.cart)
     const { el } = useSelector(state => state.favourite)
     const [active, setActive] = useState(false)
-
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(getCategoriesList())
-    }, [])
 
     const handleActive = () => {
         setActive(true)
@@ -25,6 +18,10 @@ function Header() {
 
     const handleClose = () => {
         setActive(false)
+    }
+
+    const handleModal = () => {
+        dispatch(categoriesModalOpen('categoriesmodal'))
     }
 
     return (
@@ -37,7 +34,7 @@ function Header() {
                             <option value="2" className='text-black p-1.5 max-[900px]:p-1'>Eng</option>
                         </select>
                         <nav className='header-top__nav'>
-                            <button className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Каталог</button>
+                            <button onClick={handleModal} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Каталог</button>
                             <Link to={'/support'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Поддержка</Link>
                             <Link to={'/advantages'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Наши преимущества</Link>
                             <Link to={'/reviews'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Отзывы</Link>
@@ -56,7 +53,10 @@ function Header() {
                         </SignedIn>
                     </div>
                     <div className="flex items-center justify-between my-6">
-                        <div className="flex gap-14 max-md:flex-row-reverse max-md:gap-3">
+                        <div className="flex gap-14 max-md:gap-5">
+                            <button onClick={handleModal} className='hidden max-md:block'>
+                                <MenuIcon />
+                            </button>
                             <Link to={'/'} className='flex items-center gap-2.5'>
                                 <img src="/site.logo.png" alt="site logo" />
                                 <p className="text-3xl font-bold max-md:text-xl">Playnchill</p>
@@ -65,7 +65,7 @@ function Header() {
                         <form className='relative'>
                             <SearchInput active={active} />
                         </form>
-                        <div className='flex gap-4'>
+                        <div className='flex gap-4 max-sm:gap-2'>
                             {
                                 active ? null :
                                     <button onClick={handleActive} className="relative z-50 hidden max-md:block">

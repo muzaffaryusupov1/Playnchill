@@ -1,11 +1,25 @@
 import React from 'react'
 import { FavouritesIcon } from '../../../../assets/icons'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import StockSkeleton from './StockSkeleton'
+import toast from 'react-hot-toast'
+import { addCart } from '../../../../store/slices/cart'
+import { addFavorite } from '../../../../store/slices/favourite'
 
 function Stock() {
   const { inStock } = useSelector(state => state.home)
+  const dispatch = useDispatch()
+
+  const handleAdd = (item) => {
+    dispatch(addCart(item))
+    toast.success('Savatga qo\'shildi')
+  }
+
+  const handleAddOrder = (item) => {
+    dispatch(addFavorite(item))
+    toast.success('Sevimlilarga qo\'shildi')
+  }
 
   return (
     <section className='stock'>
@@ -32,10 +46,10 @@ function Stock() {
                     </div>
                     <h3 className="font-normal text-lg text-white max-[970px]:text-base">{item.title}</h3>
                   </div>
-                  <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:top-[85%] max-[574px]:right-0 max-[388px]:top-[75%]'>
+                  <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:right-0 max-[505px]:block max-[450px]:right-2' onClick={() => handleAddOrder(item)}>
                     <FavouritesIcon />
                   </button>
-                  <button className='hidden group-hover:block bg-lime-500 w-[400px] py-3 rounded-2xl font-bold text-lg text-white border border-solid border-transparent absolute bottom-[33%] left-28 hover:border hover:border-solid hover:border-white hover:bg-transparent transition-all max-[1240px]:left-20 max-[1150px]:left-16 max-[1051px]:left-20 max-[1051px]:bottom-[40%] max-[1051px]:w-[300px] max-[1051px]:py-2 max-[970px]:bottom-[30%] max-[970px]:left-16 max-[890px]:left-10 max-[811px]:left-4 max-[811px]:bottom-[35%] max-[811px]:py-1 max-[811px]:text-sm max-[811px]:rounded-xl max-[710px]:left-14 max-[710px]:w-[200px] max-[642px]:w-[400px] max-[642px]:left-24 max-[642px]:bottom-[25%] max-[642px]:left-[76px]'>
+                  <button className='hidden group-hover:block bg-lime-500 w-[400px] py-3 rounded-2xl font-bold text-lg text-white border border-solid border-transparent absolute bottom-[33%] left-28 hover:border hover:border-solid hover:border-white hover:bg-transparent transition-all max-[1240px]:left-20 max-[1150px]:left-16 max-[1051px]:left-20 max-[1051px]:bottom-[40%] max-[1051px]:w-[300px] max-[1051px]:py-2 max-[970px]:bottom-[30%] max-[970px]:left-16 max-[890px]:left-10 max-[811px]:left-4 max-[811px]:bottom-[35%] max-[811px]:py-1 max-[811px]:text-sm max-[811px]:rounded-xl max-[710px]:left-14 max-[710px]:w-[200px] max-[642px]:w-[400px] max-[642px]:bottom-[25%] max-[642px]:left-[106px] max-[630px]:left-[86px] max-[579px]:left-[58px] max-[579px]:bottom-[30%] max-[519px]:left-[60px] max-[519px]:w-[300px] max-[574px]:block max-[450px]:left-[28px] max-[450px]:bottom-[31%] max-[378px]:left-[20px] max-[355px]:w-[250px] max-[355px]:left-[40px] max-[340px]:left-[20px]' onClick={() => handleAdd(item)}>
                     В корзину
                   </button>
                 </div>

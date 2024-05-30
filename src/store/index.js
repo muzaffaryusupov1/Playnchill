@@ -5,7 +5,7 @@ import imgmodal from "./slices/imgmodal";
 import cart from "./slices/cart";
 import favourite from "./slices/favourite";
 import products from "./slices/products";
-import mobilemodal from "./slices/mobilemodal";
+import categoriesmodal from "./slices/categoriesmodal";
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +15,6 @@ export const store = configureStore({
         cart,
         favourite,
         products,
-        mobilemodal
+        categoriesmodal
     }
 })

@@ -4,7 +4,6 @@ import 'swiper/css/navigation';
 import '../../../../style/main.css'
 import { Navigation } from 'swiper/modules';
 import { useSelector } from 'react-redux';
-import Skeleton from 'react-loading-skeleton';
 import CardSkeleton from './components/CardSkeleton';
 
 function Card() {

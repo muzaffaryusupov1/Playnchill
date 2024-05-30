@@ -23,7 +23,7 @@ function ImgModal() {
                     product.images.map((item, i) => (
                         <div className='relative' key={i}>
                             <SwiperSlide className='flex items-center justify-center cursor-pointer'>
-                                <div className='w-[1300px] h-[800px]'>
+                                <div className='w-[1100px] h-[600px] max-[1100px]:w-[900px] max-[1100px]:h-[500px] max-[915px]:w-[700px] max-[915px]:h-[400px] max-[720px]:w-[580px] max-[720px]:h-[300px] max-[550px]:w-[440px]'>
                                     <img src={item} alt="img" />
                                 </div>
                             </SwiperSlide>

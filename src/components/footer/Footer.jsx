@@ -58,10 +58,10 @@ function Footer() {
   ]
 
   return (
-    <footer className="py-20 border-t border-solid border-zinc-800">
+    <footer className="py-20 border-t border-solid border-zinc-800 max-md:py-14 max-sm:py-6">
       <div className="container">
         <div className="footer-wrapper">
-          <div className="flex items-center gap-[51px] mb-14">
+          <div className="flex items-center gap-[51px] mb-14 max-md:mb-6 max-sm:mb-3 max-[550px]:hidden">
             {
               img.map(item => (
                 <div key={item.id}>
@@ -95,7 +95,7 @@ function Footer() {
                 <span className="w-11 h-12">
                   <img src="/footer/footer-save-browsing.png" alt="img" className="w-full h-full object-cover" />
                 </span>
-                <div className="w-32">
+                <div className="w-32 max-[390px]:w-10">
                   <p className="font-normal text-sm text-white">Safe Browsing</p>
                   <h4 className="font-bold text-sm text-white">Google</h4>
                 </div>

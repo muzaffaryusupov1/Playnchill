@@ -3,7 +3,7 @@ import React from 'react'
 function ProductDescription({product}) {
   return (
     <div>
-      <p className='font-normal text-lg text-neutral-500'>
+      <p className='font-normal text-lg text-neutral-500 max-sm:text-sm'>
         {product.desc}
       </p>
     </div>
