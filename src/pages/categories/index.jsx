@@ -2,7 +2,7 @@ import { useParams, useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { getIds } from '../../utils/helpers'
-import { CategoryProducts } from './components'
+import { CategoriesSidebar, CategoryProducts } from './components'
 import { getBrands, getCategories, getProducts } from '../../store/actions/productsAction'
 
 function CategoriesPage() {
@@ -49,7 +49,7 @@ function CategoriesPage() {
         <div className="categories-wrapper">
           <div className='flex'>
             <div>
-              
+              <CategoriesSidebar/>
             </div>
             <div className="w-full">
               <div className='flex items-center justify-between mb-10'>
