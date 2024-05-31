@@ -31,7 +31,7 @@ function ImgModal() {
                     ))
                 }
             </Swiper>
-            <button className='cursor-pointer absolute p-8 top-20 right-20 border border-solid border-white z-40 flex items-center justify-center' onClick={handleClose}><CloseWhiteIcon /></button>
+            <button className='cursor-pointer absolute p-4 rounded-lg top-5 max-md:top-14 max-md:right-3 max-sm:p-2 max-sm:top-20 right-10 border border-solid border-white z-40 flex items-center justify-center' onClick={handleClose}><CloseWhiteIcon /></button>
         </div>
     );
 }

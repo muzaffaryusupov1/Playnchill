@@ -44,7 +44,7 @@ function ProductHeader({ product }) {
                                 <Swiper slidesPerView={3} modules={[Navigation]}>
                                     {
                                         product.images.map((item, key) => (
-                                            <SwiperSlide className='h-44' onClick={handleModal}>
+                                            <SwiperSlide className='h-44' onClick={handleModal} key={key}>
                                                 <div key={key} className='w-[180px] h-[167px] max-[570px]:w-[155px] max-[570px]:h-[110px] rounded-2xl overflow-hidden cursor-zoom-in hover:scale-105 ease-out duration-300 max-[720px]:mr-4 max-[720px]:w-[160px] max-[720px]:h-[130px] max-sm:rounded-md max-[450px]:w-[140px] max-[450px]:h-[100px]'>
                                                     <img src={item} alt="product img" className='w-full h-full object-cover' />
                                                 </div>
@@ -99,7 +99,7 @@ function ProductHeader({ product }) {
                         <Swiper slidesPerView={3} modules={[Navigation]}>
                             {
                                 product.images.map((item, key) => (
-                                    <SwiperSlide className='h-44' onClick={handleModal}>
+                                    <SwiperSlide className='h-44' onClick={handleModal} key={key}>
                                         <div key={key} className='w-[297px] max-md:w-[200px] max-md:h-[130px] mr-2 h-[167px] rounded-2xl overflow-hidden cursor-zoom-in hover:scale-105 ease-out duration-300'>
                                             <img src={item} alt="product img" className='w-full h-full object-cover' />
                                         </div>
