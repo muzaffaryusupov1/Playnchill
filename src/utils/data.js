@@ -48,8 +48,6 @@ export const alist = [
         subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis, dictum semper sem a. Justo, eget luctus faucibus vitae tincidunt sit faucibus sollicitudin. Lectus senectus in tempus, amet, nam nec. Enim amet nec cras quis felis nullam porta lorem ante. Odio.'
     },
 ]
-
-// import { useDispatch, useSelector } from "react-redux"
 // import { CategoryProducts, CategorySidebar } from "./components"
 // import { useState } from "react"
 // import { useParams, useSearchParams } from "react-router-dom"
