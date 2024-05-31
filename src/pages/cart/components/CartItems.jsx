@@ -4,14 +4,12 @@ import CartProduct from "./CartProduct"
 function CartItems() {
     const { items } = useSelector(state => state.cart)
     return (
-        <div>
-            <div>
-                {
-                    items.map(item => (
-                        <CartProduct product={item} key={item.id} />
-                    ))
-                }
-            </div>
+        <div className="max-[980px]:w-full">
+            {
+                items.map(item => (
+                    <CartProduct product={item} key={item.id} />
+                ))
+            }
         </div>
     )
 }

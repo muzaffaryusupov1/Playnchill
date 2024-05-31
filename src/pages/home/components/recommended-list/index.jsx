@@ -41,8 +41,8 @@ function RecommendedList() {
                                         </Link>
                                         <div className='p-4 max-[810px]:p-3 max-[684px]:p-2 max-[574px]:p-1 max-[435px]:p-0'>
                                             <div className='flex items-center gap-5 mb-2 max-[1154px]:gap-4 max-[810px]:gap-2 max-[684px]:gap-2 max-[574px]:gap-4 max-[365px]:gap-1 max-[435px]:gap-1'>
-                                                <p className="text-white font-medium text-2xl max-[1218px]:text-xl max-lg:text-base max-[684px]:text-sm max-[574px]:text-base max-[435px]:text-[13px] max-[365px]:text-[12px] max-[300px]:text-[10px]">{item.price.toLocaleString()} Р</p>
-                                                <p className="font-medium text-lg text-lime-500 max-lg:text-base max-[684px]:text-sm max-[574px]:text-sm max-[435px]:text-[13px] max-[365px]:text-[10px] max-[300px]:text-[9px]">-{item.discount}%</p>
+                                                {<p className="text-white font-medium text-2xl max-[1218px]:text-xl max-lg:text-base max-[684px]:text-sm max-[574px]:text-base max-[435px]:text-[13px] max-[365px]:text-[12px] max-[300px]:text-[10px]">{item.price ? `${item.price.toLocaleString()} Р` : 'Бесплатно'}</p>}
+                                                {item.discount ? <p className="font-medium text-lg text-lime-500 max-lg:text-base max-[684px]:text-sm max-[574px]:text-sm max-[435px]:text-[13px] max-[365px]:text-[10px] max-[300px]:text-[9px]">-{item.discount}%</p> : null}
                                                 {item.oldPrice ? <p className="font-normal text-lg text-neutral-700 line-through max-lg:text-base max-[684px]:text-sm max-[574px]:text-xs max-[435px]:text-[13px] max-[365px]:text-[10px] max-[300px]:text-[9px]">${item.oldPrice?.toLocaleString()} Р</p> : null}
                                             </div>
                                             <div>
@@ -55,7 +55,7 @@ function RecommendedList() {
                                                 <span className='max-[574px]:hidden'>В корзину</span>
                                                 <span className='max-[574px]:block'><CartIcon /></span>
                                             </button>
-                                            <span className='absolute top-3 max-[574px]:h-8 max-[574px]:right-32 max-[546px]:right-20 max-[574px]:top-[88%] max-[574px]:right-28 max-[420px]:right-20 max-[450px]:h-6 max-[390px]:top-[86%] max-[390px]:right-32 max-[375px]:right-28 max-[360px]:right-24 max-[312px]:hidden'>
+                                            <span className='absolute top-3 max-[574px]:h-8 max-[574px]:right-32 max-[546px]:right-20 max-[574px]:top-[88%] max-[420px]:right-20 max-[450px]:h-6 max-[390px]:top-[86%] max-[390px]:right-32 max-[375px]:right-28 max-[360px]:right-24 max-[312px]:hidden'>
                                                 {item.isRecommended ? <img src="/recommendedList/listtoptitle.svg" alt="list top title svg" className='w-full h-full' /> : null}
                                             </span>
                                         </div>

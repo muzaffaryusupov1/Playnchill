@@ -3,7 +3,7 @@ import Axios from "../../api";
 import { brandsList, categoriesList, productsFilter } from "../../utils/urls";
 
 
-export const getProducts = createAsyncThunk('products/list', async ({category_id, brand_arr,sortBy}) => {
+export const getProducts = createAsyncThunk('products/list', async ({ category_id, brand_arr, sortBy }) => {
     let response = await Axios.get(productsFilter(brand_arr), { params: { category_id, sortBy: sortBy === 'asc' ? 'price' : sortBy === 'desc' ? '-price' : null } })
     return response.data
 })

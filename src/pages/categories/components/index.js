@@ -1,4 +1,5 @@
 import CategoryProducts from "./CategoryProducts";
-import CategorySIdebar from "./CategorySIdebar";
+import CategorySidebar from "./CategorySidebar";
+import FilterModal from "./FilterModal";
 
-export { CategoryProducts, CategorySIdebar }
+export { CategoryProducts, CategorySidebar, FilterModal }

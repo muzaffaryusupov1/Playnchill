@@ -34,7 +34,7 @@ function CategoriesModal() {
 
     // Favourite
     const handleFavourite = () => {
-        navigate('/favourite')
+        navigate('/favourites')
         location.reload()
     }
 

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { buildBuilder } from '../../utils/helpers';
-import { getBrands, getCategories, getProducts } from "../actions/productsAction";
+import { getCategories, getProducts } from "../actions/productsAction";
 
 const initialState = {
     products: {
@@ -9,11 +9,7 @@ const initialState = {
     },
     categories: {
         list: [],
-        loading: false
-    },
-    brands: {
-        list: [],
-        loading: false
+        loading: false,
     },
 }
 
@@ -23,7 +19,6 @@ const ProductsSlice = createSlice({
     extraReducers: (builder) => {
         buildBuilder(builder, getProducts, 'products')
         buildBuilder(builder, getCategories, 'categories')
-        buildBuilder(builder, getBrands, 'brands')
     }
 })
 

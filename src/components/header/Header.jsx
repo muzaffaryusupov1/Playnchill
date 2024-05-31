@@ -63,7 +63,7 @@ function Header() {
                             </Link>
                         </div>
                         <form className='relative'>
-                            <SearchInput active={active} />
+                            <SearchInput active={active} setActive={setActive} />
                         </form>
                         <div className='flex gap-4 max-sm:gap-2'>
                             {
