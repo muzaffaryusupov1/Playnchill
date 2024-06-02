@@ -50,8 +50,8 @@ function CartProduct({ product }) {
             </div>
             <div className="flex items-center justify-between">
                 <div className="hidden gap-2 mt-2 max-[672px]:flex">
-                    <button className="p-2 cursor-pointer" onClick={handleRemove}><WhiteHeartIcon /></button>
-                    <button className="p-2 cursor-pointer" onClick={handleAddFavourite}><DeleteIcon /></button>
+                    <button className="p-2 cursor-pointer" onClick={handleAddFavourite}><WhiteHeartIcon /></button>
+                    <button className="p-2 cursor-pointer" onClick={handleRemove}><DeleteIcon /></button>
                 </div>
                 <div className='flex flex-col items-end gap-y-16 max-[672px]:gap-0'>
                     <button className='p-3 max-[672px]:hidden' onClick={handleRemove}>

@@ -19,7 +19,7 @@ function Cart() {
                 {
                     items.length <= 0 ?
                         <div className="flex items-center justify-center flex-col">
-                            <div className="w-96 h-96 max-md:w-72 max-md:h-72 max-sm:w-60 max-sm:h-60 max-[400px]:w-[100px] max-[400px]:h-[100px]">
+                            <div className="w-96 h-96 max-md:w-72 max-md:h-72 max-sm:w-60 max-sm:h-60">
                                 <img src="https://cdn-icons-png.freepik.com/512/2762/2762885.png" alt="cart empty img" className="w-full h-full object-contain" />
                             </div>
                             <div className="flex flex-col items-center justify-center gap-3">

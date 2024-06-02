@@ -31,12 +31,12 @@ function Favourites() {
         {
           el.length <= 0 ?
             <div className="flex items-center justify-center flex-col">
-              <div className="w-96 h-96">
+              <div className="w-96 h-96 max-md:w-72 max-md:h-72 max-sm:w-60 max-sm:h-60">
                 <img src="https://cdn-icons-png.freepik.com/256/10218/10218522.png?semt=ais_hybrid" alt="cart empty img" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col items-center justify-center gap-3">
-                <h3 className="font-bold text-xl text-white">Пока нет избранных</h3>
-                <button className="bg-transparent border border-solid border-neutral-500 py-3 px-5 flex items-center justify-center mb-4 rounded-lg hover:border-transparent hover:bg-white hover:text-black ease-in-out duration-200" onClick={handleHome}>На главную</button>
+                <h3 className="font-bold text-xl text-white max-md:text-base">Пока нет избранных</h3>
+                <button className="bg-transparent border border-solid border-neutral-500 py-3 px-5 flex items-center justify-center mb-4 rounded-lg hover:border-transparent hover:bg-white hover:text-black ease-in-out duration-200 max-sm:text-xs max-sm:py-2 max-sm:px-3 max-sm:mb-2" onClick={handleHome}>На главную</button>
               </div>
             </div>
             :

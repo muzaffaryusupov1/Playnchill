@@ -26,7 +26,7 @@ function App() {
         </Routes>
 
         <ScrollToTop showUnder={160} duration={600}>
-          <span className="fixed bottom-12 right-8 duration-[0.2s] ease-linear delay-0 border rounded-sm p-3 border-solid border-white hover:border-sky-400">
+          <span className="fixed bottom-12 right-8 duration-[0.2s] ease-linear delay-0 border rounded-full p-3 z-[99999999] border-solid border-white hover:border-sky-400">
             <ChevronUpIcon />
           </span>
         </ScrollToTop>

@@ -26,7 +26,7 @@ function CategoryProducts() {
         <div className="flex gap-5 max-[1060px]:gap-3 max-[655px]:gap-1 max-[578px]:gap-5 flex-wrap max-[500px]:gap-5 max-[574px]:flex-col">
             {
                 products.list.map(item => (
-                    <div className='w-[300px] h-3/4 ease-out duration-300 transition group inline-block relative max-[1290px]:w-[280px] max-[1210px]:w-[260px] max-[1130px]:w-[340px] max-[1090px]:w-[300px] max-[955px]:w-[280px] max-[895px]:w-[250px] max-[840px]:w-[240px] max-[803px]:w-[210px] max-[774px]:w-[220px] max-[716px]:w-[200px] max-[654px]:w-[300px] max-[642px]:w-[280px] max-[604px]:w-[260px] max-[574px]:flex max-[575px]:w-[100%]' key={item.id}>
+                    <div className='w-[300px] h-3/4 ease-out duration-300 transition group inline-block relative max-[1290px]:w-[280px] max-[1210px]:w-[260px] max-[1130px]:w-[340px] max-[1090px]:w-[300px] max-[955px]:w-[280px] max-[895px]:w-[250px] max-[840px]:w-[240px] max-[803px]:w-[210px] max-[774px]:w-[220px] max-[716px]:w-[200px] max-[654px]:w-[300px] max-[642px]:w-[280px] max-[604px]:w-[260px]' key={item.id}>
                         <Link to={`/product/${item.slug}`}>
                             <div className='w-full h-[450px] max-[955px]:h-[420px] max-[895px]:h-[340px] max-[810px]:h-[300px] max-[654px]:h-[400px] rounded-2xl cursor-pointer max-[574px]:w-[250px] max-[574px]:mr-3 max-[574px]:h-[400px] max-[574px]:rounded-2xl overflow-hidden max-[500px]:h-[340px] max-[450px]:h-[250px] max-[450px]:w-[200px] max-[390px]:w-[150px] max-[390px]:h-[200px] max-[310px]:h-[180px]'>
                                 <img src={item.image} alt={item.title} className='w-full h-full object-cover' />
@@ -44,9 +44,8 @@ function CategoryProducts() {
                             <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:bg-transparent max-[574px]:block max-[574px]:top-[86%] max-[574px]:right-0 max-[450px]:top-[84%] max-[388px]:top-[81%]' onClick={() => handleAddOrder(item)}>
                                 <FavouritesIcon />
                             </button>
-                            <button className='hidden transition group-hover:duration-300 group-hover:block absolute bottom-1/4 max-[1219px]:bottom-[170px] max-[1200px]:w-10/12 max-[895px]:w-[90%] max-[895px]:bottom-[25%] max-[790px]:bottom-[30%] max-[790px]:p-0 max-md:text-base max-md:h-10 max-md:p-1 max-[654px]:w-[260px] max-[648px]:bottom-[100px] max-[642px]:w-[250px max-[604px]:w-[220px] max-[574px]:bottom-0 h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg max-[574px]:block max-[574px]:w-auto max-[574px]:bg-transparent max-[574px]:hover:border-transparent max-[574px]:right-10 max-[500px]:m-0 max-[500px]:mb-[10px] max-[450px]:mb-0' onClick={() => handleAdd(item)}>
-                                <span className='max-[574px]:hidden'>В корзину</span>
-                                <span className='max-[574px]:block'><CartIcon /></span>
+                            <button className='hidden transition group-hover:duration-300 group-hover:block absolute bottom-1/4 max-[1219px]:bottom-[170px] max-[1200px]:w-10/12 max-[895px]:w-[90%] max-[895px]:bottom-[25%] max-[790px]:bottom-[30%] max-[790px]:p-0 max-md:text-base max-md:h-10 max-md:p-1 max-[654px]:w-[260px] max-[648px]:bottom-[100px] max-[642px]:w-[250px max-[604px]:w-[220px] max-[574px]:bottom-0 h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg max-[574px]:w-auto max-[574px]:bg-transparent max-[574px]:hover:border-transparent max-[574px]:right-10 max-[500px]:m-0 max-[500px]:mb-[10px] max-[450px]:mb-0' onClick={() => handleAdd(item)}>
+                                В корзину
                             </button>
                         </div>
                     </div>
