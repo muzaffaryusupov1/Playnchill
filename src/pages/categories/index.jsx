@@ -59,8 +59,8 @@ function CategoriesPage() {
                 <form>
                   <select className="bg-transparent cursor-pointer p-1.5 border rounded max-[574px]:p-0.5" id='select' onChange={handleAsc}>
                     <option value="ascending" className="text-black p-1.5 max-[900px]:p-1  max-[574px]:text-xs max-[574px]:p-0.5">По алфавиту</option>
-                    <option value="desc" className="text-black p-1.5 max-[900px]:p-1 max-[574px]:text-xs max-[574px]:p-0.5">Сначала дешевые</option>
-                    <option value="asc" className="text-black p-1.5 max-[900px]:p-1 max-[574px]:text-xs max-[574px]:p-0.5">Сначала дорогие</option>
+                    <option value="asc" className="text-black p-1.5 max-[900px]:p-1 max-[574px]:text-xs max-[574px]:p-0.5">Сначала дешевые</option>
+                    <option value="desc" className="text-black p-1.5 max-[900px]:p-1 max-[574px]:text-xs max-[574px]:p-0.5">Сначала дорогие</option>
                   </select>
                 </form>
               </div>

@@ -19,7 +19,7 @@ function CategoriesSidebar() {
 
     return (
         <div>
-            <div className="w-[300px] border-neutral-600 px-4 max-[651px]:hidden">
+            <div className="w-[300px] border-neutral-600 px-4 max-[950px]:w-[250px] max-[892px]:w-[220px] max-[651px]:hidden">
                 <div className="flex flex-col gap-5">
                     <div>
                         <h2 className="font-semibold text-xl text-white border-b-2 border-solid border-neutral-700 pb-2">Categories</h2>

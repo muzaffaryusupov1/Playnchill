@@ -56,11 +56,7 @@ function ProductHeader({ product }) {
                         </div>
                         <div className="content">
                             <div className='flex flex-col gap-5 mb-5'>
-                                <h3 className='font-extrabold text-4xl text-white max-sm:text-xl'>{product.title}</h3>
-                                <div className='flex items-center gap-2'>
-                                    <span className={product.inStock ? "w-2 h-2 rounded-full bg-lime-500" : "w-2 h-2 rounded-full bg-red-500"}></span>
-                                    <p className="font-normal text-sm text-white max-sm:text-xs">{product.inStock ? 'В наличии' : 'Net'}</p>
-                                </div>
+                                <h3 className='font-extrabold text-4xl text-white max-sm:text-xl mb-3'>{product.title}</h3>
                             </div>
                             <div className='flex items-center gap-5 mb-5 max-[710px]:flex-wrap'>
                                 <p className='font-bold text-3xl text-white max-sm:text-lg'>{product.price.toLocaleString()} Р</p>
@@ -71,28 +67,20 @@ function ProductHeader({ product }) {
                                 <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500 max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAddOrder}>В избранное</button>
                                 <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAdd}>В корзину</button>
                             </div>
-                            <div className='flex gap-16 my-10 max-lg:gap-4 max-md:flex-wrap max-sm:gap-5'>
-                                <ul className='flex flex-col gap-2'>
-                                    <li className='font-normal text-lg text-white max-sm:text-base'>Жанр</li>
-                                    <li className='font-semibold text-xl text-white max-sm:text-base'>Гонки</li>
-                                </ul>
-                                <ul className='flex flex-col gap-2'>
-                                    <li className='font-normal text-lg text-white max-sm:text-base'>Платформа</li>
-                                    <li className='font-semibold text-xl text-white max-sm:text-base'>Steam</li>
-                                </ul>
-                                <ul className='flex flex-col gap-2'>
-                                    <li className='font-normal text-lg text-white max-sm:text-base'>Регион активации</li>
-                                    <li className='font-semibold text-xl text-white max-sm:text-base'>Страны СНГ</li>
-                                </ul>
-                                <ul className='flex flex-col gap-2'>
-                                    <li className='font-normal text-lg text-white max-sm:text-base'>Тип товара</li>
-                                    <li className='font-semibold text-xl text-white max-sm:text-base'>Учетная запись</li>
-                                </ul>
-                            </div>
-                            <div className='flex items-center gap-2'>
-                                <span><CheckMarkIcon /></span>
-                                <span className='font-semibold text-lg text-white max-sm:text-base'>Гарантия качества</span>
-                            </div>
+                            {
+                                product.attributes.slice(0, 2).map(item => (
+                                    <div className='flex flex-col gap-6 my-10 max-lg:gap-4 max-md:flex-wrap max-sm:gap-5' key={item.id}>
+                                        <div className='flex gap-10'>
+                                            <ul className='flex flex-col gap-2'>
+                                                <li className='font-normal text-lg text-white max-sm:text-base'>{item.title}:</li>
+                                            </ul>
+                                            <ul className='flex flex-col gap-2'>
+                                                <li className='font-bold text-xl text-white max-sm:text-base'>{item.value}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                     <div className="my-20 w-[75%] max-md:my-2 max-sm:hidden">

@@ -214,3 +214,50 @@ body {
 .bg2 {
     background-color: rgba(0, 0, 0, 0.6);
 }
+
+.search-result {
+    position: absolute;
+    display: inline-block;
+    top: 100%;
+    z-index: 99;
+    width: calc(100% + 10px);
+    padding: 0;
+    margin: 0;
+    color: #000;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #EEEEEE calc(100% - 10px), transparent calc(100% - 10px) calc(100% + 10px));
+}
+
+@media screen and (max-width: 768px) {
+    .search-result{
+        top: 110px;
+        right: -200px;
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .search-result{
+        top: 110px;
+        right: -110px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .search-result{
+        top: 110px;
+        right: -150px;
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    .search-result{
+        top: 110px;
+        right: -110px;
+        width: 300px;
+    }
+}

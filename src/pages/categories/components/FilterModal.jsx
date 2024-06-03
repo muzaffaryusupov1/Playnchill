@@ -12,7 +12,7 @@ function FilterModal({ active, handleClose }) {
                 active ?
                     <div className='fixed top-0 left-0 w-full h-full z-[99999]'>
                         <div className='absolute top-0 left-0 w-full h-full bg2' onClick={handleClose}></div>
-                        <div className="w-[300px] border-white-600 p-4 bg-neutral-800 absolute top-0 left-0 z-[99999]">
+                        <div className="w-[300px] h-full border-white-600 p-4 bg-neutral-800 absolute top-0 left-0 z-[99999] max-[400px]:w-[240px]">
                             <div className="flex flex-col gap-5">
                                 <div className='border-b-2 border-solid border-neutral-700 pb-2 flex items-center justify-between'>
                                     <h2 className="font-semibold text-xl text-white">Categories</h2>

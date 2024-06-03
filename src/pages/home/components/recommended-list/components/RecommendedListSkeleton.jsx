@@ -10,7 +10,7 @@ function RecommendedListSkeleton({ cards }) {
             .fill(0).map((_, i) => (
                 <div key={i} className='max-[575px]:flex'>
                     <div>
-                        <Skeleton width={width >= 575 ? 250 : 300} height={width >= 575 ? 300 : 450} baseColor='gray' className='opacity-70' />
+                        <Skeleton width={width >= 435 ? 300 : 150} height={width >= 435 ? 400 : 220} baseColor='gray' className='opacity-70' />
                     </div>
                     <div>
                         <Skeleton className='mt-3 ml-1 opacity-70' width={95} height={15} baseColor='gray' />

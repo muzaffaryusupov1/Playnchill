@@ -52,13 +52,13 @@ function SearchInput({ active, setActive }) {
                     <SearchIcon />
                 </label>
             </div>
-            <div className={result.length === 0 ? 'hidden opacity-0' : 'w-[500px] bg-slate-800 flex flex-col rounded-xl mt-4 max-h-[300px] absolute z-30 p-3 opacity-100 overflow-y-scroll max-lg:w-[400px] max-md:right-[-100px] max-md:top-24 max-[601px]:right-[-150px]'}>
+            <div className={result.length === 0 ? 'hidden opacity-0' : 'search-result'}>
                 {
                     result.map(item => {
                         return (
                             <div onClick={() => handleNavigate(item.slug)} className='[&:not(:last-child)]:mb-3 cursor-pointer' key={item.id}>
                                 <div className='flex'>
-                                    <div className='w-[200px] h-20 overflow-hidden max-lg:w-[150px]'>
+                                    <div className='w-[200px] h-[80px] overflow-hidden max-lg:w-[150px] max-lg:h-[70px] max-[500px]:w-[120px]'>
                                         <img src={item.extraimg} alt={item.slug} className='w-full h-full object-cover' />
                                     </div>
                                     <div className='ml-5'>

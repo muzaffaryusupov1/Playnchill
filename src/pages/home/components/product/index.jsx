@@ -31,7 +31,7 @@ function Product() {
                     </div>
                     <div className="flex flex-wrap gap-5 max-[1060px]:gap-3 max-lg:flex-wrap max-[500px]:gap-5 max-[574px]:flex-col">
                         {
-                            products.loading ? <RecommendedListSkeleton cards={2} /> : products.list.map(item => (
+                            products.loading ? <RecommendedListSkeleton cards={13} className="mb-5" /> : products.list.map(item => (
                                 <div className='w-[300px] h-3/4 group relative max-[1040px]:w-[235px] max-[1006px]:w-[280px] max-[955px]:w-[260px] max-[840px]:w-[240px] max-[774px]:w-[220px] max-[716px]:w-[200px] max-[654px]:w-[300px] max-[642px]:w-[280px] max-[604px]:w-[260px] max-[574px]:flex max-[574px]:w-full' key={item.id}>
                                     <Link to={`/product/${item.slug}`}>
                                         <div className='w-full h-[400px] rounded-2xl cursor-pointer max-[574px]:w-[250px] max-[574px]:mr-3 max-[574px]:h-[400px] max-[574px]:rounded-2xl overflow-hidden max-[500px]:h-[340px] max-[450px]:h-[250px] max-[450px]:w-[200px] max-[390px]:w-[150px] max-[390px]:h-[200px] max-[310px]:h-[180px]'>

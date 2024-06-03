@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CartIcon, CloseWhiteIcon, FavouritesIcon, MenuIcon, MobileSearchIcon } from '../../assets/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
@@ -11,6 +11,7 @@ function Header() {
     const { el } = useSelector(state => state.favourite)
     const [active, setActive] = useState(false)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const handleActive = () => {
         setActive(true)
@@ -24,6 +25,10 @@ function Header() {
         dispatch(categoriesModalOpen('categoriesmodal'))
     }
 
+    const handleCategories = () => {
+        navigate('/category/survival-game-1')
+    }
+
     return (
         <header className='relative z-50'>
             <div className="container">
@@ -34,7 +39,7 @@ function Header() {
                             <option value="2" className='text-black p-1.5 max-[900px]:p-1'>Eng</option>
                         </select>
                         <nav className='header-top__nav'>
-                            <button onClick={handleModal} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Каталог</button>
+                            <button onClick={handleCategories} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Каталог</button>
                             <Link to={'/support'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Поддержка</Link>
                             <Link to={'/advantages'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Наши преимущества</Link>
                             <Link to={'/reviews'} className='font-medium text-lg leading-5 hover:underline mr-8 max-[1050px]:mr-5 max-lg:mr-3 max-lg:text-sm max-[910px]:text-[12px]'>Отзывы</Link>

@@ -3,7 +3,7 @@ export const categoriesMacList = '/categorys?mac=true'
 export const categoriesWindowsList = '/categorys?windows=true'
 export const bannersList = '/products?banner=true'
 export const productRecommendedList = '/products?isRecommended=true'
-export const cardList = '/card'
+export const cardList = '/products?isCard=true'
 export const productsList = '/products'
 export const stockList = '/products?inStock=true'
 
