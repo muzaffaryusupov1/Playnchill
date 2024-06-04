@@ -1,5 +1,5 @@
-import React from 'react'
-import { CheckMarkIcon, HeartIcon } from '../../../assets/icons'
+import React, { useState } from 'react'
+import { ArrowBackIcon, CheckMarkIcon, ChevronLeftIcon, ChevronRightIcon, HeartIcon } from '../../../assets/icons'
 import { useDispatch } from 'react-redux'
 import { imgModalOpen } from '../../../store/slices/imgmodal'
 import { addCart } from '../../../store/slices/cart'
@@ -10,7 +10,10 @@ import 'swiper/css/navigation';
 import '../../../style/main.css';
 import { Navigation } from 'swiper/modules';
 import toast from 'react-hot-toast'
-
+import { SlideshowLightbox } from 'lightbox.js-react/dist'
+import ReactSlidy from 'react-slidy'
+import 'react-slidy/lib/index.scss'
+// import 'react-slidy/lib/styles.css'
 
 function ProductHeader({ product }) {
     const dispatch = useDispatch()
@@ -28,8 +31,13 @@ function ProductHeader({ product }) {
         dispatch(addFavorite(product))
         toast.success('Sevimlilarga qo\'shildi')
     }
-
     const width = window.screen.width
+
+    const [active, setActive] = useState(false)
+
+    const handleActive = () => {
+        setActive(true)
+    }
 
     return (
         <div className="product-header">
@@ -39,19 +47,6 @@ function ProductHeader({ product }) {
                         <div className='h-full'>
                             <div className="w-[350px] h-[478px] rounded-2xl overflow-hidden max-sm:w-full max-sm:h-[400px]">
                                 <img src={product.image} alt={product.title} className='w-full h-full object-cover max-sm:object-contain' />
-                            </div>
-                            <div className="my-20 hidden max-sm:block max-[660px]:my-7 max-[570px]:my-2 max-[530px]:overflow-hidden">
-                                <Swiper slidesPerView={3} modules={[Navigation]}>
-                                    {
-                                        product.images.map((item, key) => (
-                                            <SwiperSlide className='h-44' onClick={handleModal} key={key}>
-                                                <div key={key} className='w-[180px] h-[167px] max-[570px]:w-[155px] max-[570px]:h-[110px] rounded-2xl overflow-hidden cursor-zoom-in hover:scale-105 ease-out duration-300 max-[720px]:mr-4 max-[720px]:w-[160px] max-[720px]:h-[130px] max-sm:rounded-md max-[450px]:w-[140px] max-[450px]:h-[100px]'>
-                                                    <img src={item} alt="product img" className='w-full h-full object-cover' />
-                                                </div>
-                                            </SwiperSlide>
-                                        ))
-                                    }
-                                </Swiper>
                             </div>
                         </div>
                         <div className="content">
@@ -83,18 +78,14 @@ function ProductHeader({ product }) {
                             }
                         </div>
                     </div>
-                    <div className="my-20 w-[75%] max-md:my-2 max-sm:hidden">
-                        <Swiper slidesPerView={3} modules={[Navigation]}>
+                    <div className="my-20 w-full h-[175px] max-[500px]:h-[145px] max-[420px]:h-[125px] max-[380px]:h-[100px] max-md:my-2 flex overflow-hidden">
+                        <SlideshowLightbox fullScreen showThumbnails className="container grid grid-cols-3 gap-2 mx-auto">
                             {
                                 product.images.map((item, key) => (
-                                    <SwiperSlide className='h-44' onClick={handleModal} key={key}>
-                                        <div key={key} className='w-[297px] max-md:w-[200px] max-md:h-[130px] mr-2 h-[167px] rounded-2xl overflow-hidden cursor-zoom-in hover:scale-105 ease-out duration-300'>
-                                            <img src={item} alt="product img" className='w-full h-full object-cover' />
-                                        </div>
-                                    </SwiperSlide>
+                                    <img className="w-[310px] h-[175px] rounded object-cover max-[500px]:h-[145px] max-[420px]:h-[125px] max-[380px]:h-[100px]" key={key} src={item} />
                                 ))
                             }
-                        </Swiper>
+                        </SlideshowLightbox>
                     </div>
                 </div>
             </div>

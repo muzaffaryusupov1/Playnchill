@@ -8,10 +8,17 @@ import { createPortal } from "react-dom"
 import ImgModal from "./components/ImgModal"
 import toast, { Toaster } from 'react-hot-toast';
 import CategoriesModal from "./components/CategoriesModal"
+import { useEffect } from "react"
+import { initLightboxJS } from 'lightbox.js-react'
+import 'lightbox.js-react/dist/index.css'
+
 
 function App() {
   const { imgModal } = useSelector(state => state.imgmodal)
   const { categoriesmodal } = useSelector(state => state.categoriesmodal)
+  useEffect(() => {
+    initLightboxJS("Insert your License Key here", "Insert plan type here");
+  }, []);
 
   const notify = () => toast('Here is your toast.');
 
@@ -34,7 +41,7 @@ function App() {
           position="top-center"
           reverseOrder={true}
         />
-        {imgModal && createPortal(<ImgModal />, document.querySelector('.wrapper'))}
+        {/* {imgModal && createPortal(<ImgModal />, document.querySelector('.wrapper'))} */}
         {categoriesmodal && createPortal(<CategoriesModal />, document.querySelector('.wrapper'))}
       </main>
       <Footer />

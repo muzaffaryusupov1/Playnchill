@@ -15,9 +15,9 @@
     --black: #06030f;
     --white: #ffffff;
     --main-font: 'Manrope', sans-serif;
-    --next-font: 'Roboto' sans-serif;
-    --second-font: 'Montserrat' sans-serif;
-    --last-font: 'Inter' sans-serif;
+    --next-font: 'Roboto,' 'sans-serif';
+    --second-font: 'Montserrat' 'sans-serif';
+    --last-font: 'Inter' 'sans-serif';
     --container-width: 1290px;
 }
 
@@ -260,4 +260,14 @@ body {
         right: -110px;
         width: 300px;
     }
+}
+
+@import '~react-slidy/lib/index';
+
+.scroll{
+    overflow-x: scroll;
+}
+
+.scroll::-webkit-scrollbar{
+    display: none;
 }

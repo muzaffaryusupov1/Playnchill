@@ -41,12 +41,12 @@ function CategoryProducts() {
                             <div>
                                 <p className="font-normal text-base text-white mb-2 h-12 max-[574px]:w-2/4 max-[574px]:h-full max-md:text-sm max-[574px]:text-xs max-[465px]:text-[12px] max-[465px]:w-full max-[442px]:text-[10px]">{item.title.split(' ').slice(0, 3).join(' ')}</p>
                             </div>
-                            {/* <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[574px]:block max-[574px]:top-3 max-[574px]:right-3 max-[450px]:top-[84%] max-[388px]:top-[81%]' onClick={() => handleAddOrder(item)}>
+                            <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[602px]:block' onClick={() => handleAddOrder(item)}>
                                 <FavouritesIcon />
                             </button>
-                            <button className='hidden transition group-hover:duration-300 group-hover:block absolute bottom-1/4 max-[1219px]:bottom-[170px] max-[1200px]:w-10/12 max-[895px]:w-[90%] max-[895px]:bottom-[25%] max-[790px]:bottom-[30%] max-[790px]:p-0 max-md:text-base max-md:h-10 max-md:p-1 max-[654px]:w-[260px] max-[648px]:bottom-[100px] max-[642px]:w-[250px max-[604px]:w-[220px] h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg max-[574px]:block max-[574px]:bottom-14 max-[574px]:right-3 max-[500px]:m-0 max-[500px]:mb-[10px] max-[450px]:mb-0' onClick={() => handleAdd(item)}>
+                            <button className='hidden transition group-hover:duration-300 group-hover:block absolute bottom-1/4 h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg text-center max-[863px]:w-[240px] max-[805px]:w-[210px] max-[863px]:p-2.5 max-[743px]:w-[190px] max-[743px]:h-12 max-[743px]:text-base max-[703px]:right-[5px] max-[663px]:w-[140px] max-[663px]:h-10 max-[663px]:text-sm max-[663px]:right-[20px] max-[651px]:w-[260px] max-[651px]:right-[10px] max-[651px]:mb-0 max-[602px]:w-[230px] max-[602px]:block max-[602px]:right-[10px] max-[574px]:bottom-[80px] max-[541px]:w-[200px] max-[485px]:w-[170px] max-[485px]:h-9 max-[485px]:text-xs max-[485px]:p-0 max-[442px]:w-[150px] max-[422px]:h-8 max-[382px]:w-[130px] max-[382px]:right-[15px] max-[382px]:bottom-[65px] max-[358px]:w-[130px] max-[358px]:right-[10px]' onClick={() => handleAdd(item)}>
                                 В корзину
-                            </button> */}
+                            </button>
                         </div>
                     </div>
                 ))

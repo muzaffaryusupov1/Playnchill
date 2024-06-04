@@ -48,7 +48,7 @@ function TabMenu({ product }) {
               list.map(item => (
                 <button
                   key={item.id}
-                  className={isActiveTab === item.tabName ? "border-2 border-white border-b-2 pb-5 border-t-0 border-r-0 border-l-0 border-solid font-normal text-xl text-white mr-6 py-5 max-sm:text-base max-[510px]:text-xs max-[510px]:mr-2 max-[510px]:py-2" : "py-5 font-normal text-xl text-white mr-6 max-sm:text-base max-[510px]:text-xs max-[510px]:py-2"}
+                  className={isActiveTab === item.tabName ? "border-2 border-white border-b-2 pb-5 border-t-0 border-r-0 border-l-0 border-solid [&:not(:last-child)]:mr-4 font-medium text-base text-white max-sm:text-sm max-[550px]:text-[11px] max-sm:pb-2 max-[400px]:mr-1" : "border-2 border-transparent border-b-2 pb-5 border-t-0 border-r-0 border-l-0 border-solid [&:not(:last-child)]:mr-4 font-medium text-base text-white max-sm:text-sm max-[550px]:text-[11px] max-sm:pb-2 max-[400px]:mr-1"}
                   onClick={() => handleTab(item.tabName)}
                 >
                   {item.name}

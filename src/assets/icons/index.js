@@ -25,6 +25,8 @@ import LikedIcon from "./LikedIcon";
 import HomeIcon from "./HomeIcon";
 import FilterIcon from "./FilterIcon";
 import DeleteIcon from "./DeleteIcon";
+import ChevronLeftIcon from "./ChevronLeftIcon";
+import ChevronRightIcon from "./ChevronRightIcon";
 
 export {
     SiteIcon, MenuIcon, SearchIcon, HeartIcon, CartIcon, FavouritesIcon,
@@ -34,4 +36,5 @@ export {
     CheckMarkIcon, CloseIcon, MinusIcon, PlusIcon, BlackHeartIcon,
     CloseWhiteIcon, ArrowBackIcon, WhiteHeartIcon, DownArrowIcon,
     CopyIcon, LikedIcon, HomeIcon, FilterIcon, DeleteIcon,
+    ChevronLeftIcon, ChevronRightIcon,
 }
