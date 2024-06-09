@@ -6,7 +6,6 @@ import HomePage from "./home";
 import NotFoundPage from "./notfound";
 import ProductPage from "./product";
 import ReviewsPage from "./reviews";
-import SearchPage from "./search";
 import SupportPage from "./support";
 
-export { HomePage, Categories, Cart, NotFoundPage, Favourites, ProductPage, SearchPage, SupportPage, AdvantagesPage, ReviewsPage }
+export { HomePage, Categories, Cart, NotFoundPage, Favourites, ProductPage, SupportPage, AdvantagesPage, ReviewsPage }

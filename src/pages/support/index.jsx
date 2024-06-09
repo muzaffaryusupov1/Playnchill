@@ -57,17 +57,17 @@ function SupportPage() {
             <div className="container">
                 <div className='support-page__wrapper'>
                     <div className='relative'>
-                        <div className='bg-[url(/support/support-img2.png)] opacity-15 h-[450px]'></div>
+                        <div className='bg-[url(/support/support-img2.png)] opacity-15 h-[450px] max-md:h-[290px]'></div>
                         <div>
-                            <h2 className='absolute top-[160px] ml-5 font-extrabold text-5xl leading-[130%] z-30'>Контакты и поддержка</h2>
-                            <img src="/support/support-img1.png" alt="support page img" className='absolute top-0 right-[-130px]' />
+                            <h2 className='absolute top-[160px] ml-5 font-extrabold text-5xl leading-[130%] z-30 max-lg:text-3xl'>Контакты и поддержка</h2>
+                            <img src="/support/support-img1.png" alt="support page img" className='absolute top-0 right-[-130px] max-[1528px]:right-[-100px] max-[1468px]:right-[-60px] max-[1390px]:right-[-20px] max-[1312px]:right-[0px] max-lg:w-[500px] max-lg:h-[350px] max-lg:top-24 max-md:w-[350px] max-md:h-[250px] max-md:top-10' />
                         </div>
                     </div>
-                    <div className='flex items-center'>
-                        <div className='w-[49%] flex items-center justify-between p-10'>
+                    <div className='flex items-center max-[690px]:flex-col'>
+                        <div className='w-[49%] flex items-center justify-between p-10 max-[1045px]:p-4'>
                             <div>
                                 <p className='font-medium text-xl text-[#ffffffb3]'>Техническая поддержка</p>
-                                <p className="font-semibold text-4xl text-white email">theyusupov@gmail.com</p>
+                                <p className="font-semibold text-4xl text-white email max-[1045px]:text-xl">theyusupov@gmail.com</p>
                             </div>
                             <CopyToClipboard text={text} onCopy={(text, result) => console.log(result)}>
                                 <button onClick={handleCopy} className='relative ease-in-out transition-all duration-300'>
@@ -76,10 +76,10 @@ function SupportPage() {
                                 </button>
                             </CopyToClipboard>
                         </div>
-                        <div className='w-[49%] flex items-center justify-between p-10'>
+                        <div className='w-[49%] flex items-center justify-between p-10 max-[1045px]:text-xl'>
                             <div>
                                 <p className='font-medium text-xl text-[#ffffffb3]'>Техническая поддержка</p>
-                                <p className="font-semibold text-4xl text-white email">theyusupov@gmail.com</p>
+                                <p className="font-semibold text-4xl text-white email max-[1045px]:text-xl">theyusupov@gmail.com</p>
                             </div>
                             <CopyToClipboard text={text} onCopy={(text, result) => console.log(result)}>
                                 <button onClick={handleCopy2} className='relative ease-in-out transition-all duration-300'>
@@ -92,13 +92,13 @@ function SupportPage() {
                     <div>
                         <div>
                             <div className='mb-7'>
-                                <h3 className='font-semibold text-5xl text-white'>FAQ</h3>
+                                <h3 className='font-semibold text-5xl text-white max-md:text-2xl'>FAQ</h3>
                             </div>
                             <div className='flex flex-col gap-9'>
-                                <div className='flex items-center justify-between py-6 px-10 border border-solid border-[#252132] rounded-2xl relative'>
+                                <div className='flex items-center justify-between py-6 px-10 border border-solid border-[#252132] rounded-2xl relative max-md:py-4 max-md:px-6'>
                                     <div>
-                                        <p className='font-extrabold text-2xl text-white'>Как купить игру, если нет денег?</p>
-                                        <p className={active ? "block font-medium text-xl text-white mt-8" : "hidden"}>
+                                        <p className='font-extrabold text-2xl text-white max-md:text-lg'>Как купить игру, если нет денег?</p>
+                                        <p className={active ? "block font-medium text-xl text-white mt-8 max-md:text-base max-md:mt-3" : "hidden"}>
                                             На одной раздаче - один победитель и один приз. Одна раздача игры длится 24 часа. Начало новой раздачи steam игр в 19:00 по Москве. Конкурс ежедневный - шансы выиграть есть у каждого! Победитель выбирается случайно нашим ботом, который честен и непредвзят в любое время года. Бота нельзя подкупить, договориться с ним или понравиться ему.
                                         </p>
                                     </div>
@@ -117,10 +117,10 @@ function SupportPage() {
                                         }
                                     </div>
                                 </div>
-                                <div className='flex items-center justify-between py-6 px-10 border border-solid border-[#252132] rounded-2xl relative'>
+                                <div className='flex items-center justify-between py-6 px-10 border border-solid border-[#252132] rounded-2xl relative max-md:py-4 max-md:px-6'>
                                     <div>
-                                        <p className='font-extrabold text-2xl text-white'>ЧТО ВЫ ПРОДАЕТЕ, И КАК Я ПОЛУЧУ КУПЛЕННУЮ ИГРУ?</p>
-                                        <p className={active2 ? "block font-medium text-xl text-white mt-8" : "hidden"}>
+                                        <p className='font-extrabold text-2xl text-white max-md:text-lg'>ЧТО ВЫ ПРОДАЕТЕ, И КАК Я ПОЛУЧУ КУПЛЕННУЮ ИГРУ?</p>
+                                        <p className={active2 ? "block font-medium text-xl text-white mt-8 max-md:text-base max-md:mt-3" : "hidden"}>
                                             Сразу отметим, что мы не продаем аккаунты других людей или физические товары. Мы магазин цифровых ключей PC-игр, но также у нас в продаже можно найти карточки пополнения и продления различных подписок — как для консолей (PlayStation и Xbox), так и для онлайн-кинотеатров (Okko, START и других). Покупая ключ, вы получаете его в ваш личный кабинет на сайте в течение 5 минут (мы не отправляем цифровые ключи на почту). После этого вам нужно активировать его по инструкции, которая есть на странице каждого товара. Если это ключ на игру, то сама она устанавливается на ваш компьютер из библиотеки игровой платформы (Steam, EA App, Ubisoft Connect и тому подобным).
                                         </p>
                                     </div>
@@ -139,10 +139,10 @@ function SupportPage() {
                                         }
                                     </div>
                                 </div>
-                                <div className='flex items-center justify-between py-6 px-10 border border-solid border-[#252132] rounded-2xl relative'>
+                                <div className='flex items-center justify-between py-6 px-10 border border-solid border-[#252132] rounded-2xl relative max-md:py-4 max-md:px-6'>
                                     <div>
-                                        <p className='font-extrabold text-2xl text-white'>Как купить игру, если нет денег?</p>
-                                        <p className={active3 ? "block font-medium text-xl text-white mt-8" : "hidden"}>
+                                        <p className='font-extrabold text-2xl text-white max-md:text-lg'>Как купить игру, если нет денег?</p>
+                                        <p className={active3 ? "block font-medium text-xl text-white mt-8 max-md:text-base max-md:mt-3" : "hidden"}>
                                             На одной раздаче - один победитель и один приз. Одна раздача игры длится 24 часа. Начало новой раздачи steam игр в 19:00 по Москве. Конкурс ежедневный - шансы выиграть есть у каждого! Победитель выбирается случайно нашим ботом, который честен и непредвзят в любое время года. Бота нельзя подкупить, договориться с ним или понравиться ему.
                                         </p>
                                     </div>

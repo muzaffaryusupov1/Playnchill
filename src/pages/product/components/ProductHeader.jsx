@@ -62,20 +62,16 @@ function ProductHeader({ product }) {
                                 <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500 max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAddOrder}>В избранное</button>
                                 <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAdd}>В корзину</button>
                             </div>
-                            {
-                                product.attributes.slice(0, 2).map(item => (
-                                    <div className='flex flex-col gap-6 my-10 max-lg:gap-4 max-md:flex-wrap max-sm:gap-5' key={item.id}>
-                                        <div className='flex gap-10'>
-                                            <ul className='flex flex-col gap-2'>
-                                                <li className='font-normal text-lg text-white max-sm:text-base'>{item.title}:</li>
-                                            </ul>
-                                            <ul className='flex flex-col gap-2'>
-                                                <li className='font-bold text-xl text-white max-sm:text-base'>{item.value}</li>
-                                            </ul>
+                            <div className='my-6 flex flex-col gap-2'>
+                                {
+                                    product.attributes.slice(0, 3).map(item => (
+                                        <div className='flex gap-2 mt-2'>
+                                            <p className='font-normal text-lg text-white max-sm:text-base'>{item.title}:</p>
+                                            <p className='font-extrabold text-xl text-white max-sm:text-base'>{item.value}</p>
                                         </div>
-                                    </div>
-                                ))
-                            }
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className="my-20 w-full h-[175px] max-[500px]:h-[145px] max-[420px]:h-[125px] max-[380px]:h-[100px] max-md:my-2 flex overflow-hidden">

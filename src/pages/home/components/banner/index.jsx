@@ -47,7 +47,7 @@ function Banner() {
                                             <div className="mb-5 mr-10 w-[151px] h-[100px] max-lg:mb-2 max-lg:w-40 max-md:w-24 max-sm:w-20 max-sm:h-8 ">
                                                 <img src={item.bannerlogo} alt='img' className='banner-content__img' />
                                             </div>
-                                            <p className="w-3/6 h-28 max-lg:h-20 max-md:h-16 font-normal text-2xl text-white max-lg:text-lg max-md:text-base max-sm:text-sm max-[543px]:w-9/12 max-[543px]:text-[12px] max-[348px]:w-[90%] max-[348px]:mb-10 max-[348px]:text-[10px]">
+                                            <p className="w-3/6 h-28 max-lg:h-20 max-md:h-16 font-normal text-2xl text-white max-lg:text-lg max-md:text-base max-sm:text-sm max-[543px]:w-9/12 max-[543px]:text-[12px] max-[378px]:w-[90%] max-[378px]:mb-10 max-[378px]:text-[10px]">
                                                 {item.desc.split(' ').slice(0, 17).join(' ')}
                                             </p>
                                             <div className="flex items-end gap-4 my-10 max-lg:my-6 max-md:my-9 max-sm:my-12 max-[450px]:gap-2 max-[550px]:my-8 max-[450px]:my-4">

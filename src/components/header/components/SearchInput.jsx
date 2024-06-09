@@ -15,8 +15,8 @@ function SearchInput({ active, setActive }) {
                 return (
                     value &&
                     product &&
-                    product.name &&
-                    product.name.toUpperCase().includes(value) || product.name.toLowerCase().includes(value) || product.name.includes(value))
+                    product.title &&
+                    product.title.toUpperCase().includes(value) || product.title.toLowerCase().includes(value) || product.title.includes(value))
             })
             setResult(results)
         })
@@ -34,6 +34,7 @@ function SearchInput({ active, setActive }) {
         navigate(`/product/${slug}`)
         setResult([])
         setInput([])
+        location.reload()
     }
 
     const handleClose = () => {

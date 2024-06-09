@@ -32,7 +32,7 @@ function Card() {
           <div className="flex items-center gap-5">
             {
               card.loading ? <CardSkeleton cards={2} /> : card.list.map(item => (
-                <SwiperSlide className='w-1/2 h-96 rounded-xl p-10 relative flex flex-col justify-between mr-3 max-[450px]:h-80' key={item.id}>
+                <SwiperSlide className='w-1/2 h-96 rounded-xl p-10 relative flex flex-col justify-between ml-1 max-[450px]:h-80' key={item.id}>
                   <div className='absolute top-0 left-0 w-full h-full'>
                     <img src={item.cardimg} className='w-full h-full object-cover' />
                   </div>

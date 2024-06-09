@@ -46,7 +46,10 @@ function Header() {
                         </nav>
                         <SignedOut>
                             <SignInButton mode='modal'>
-                                <img src="/icon.png" alt="site icon" title='Sign In' className='w-9 h-9 cursor-pointer' />
+                                <div className='flex flex-col items-center gap-1'>
+                                    <img src="/icon.png" alt="site icon" title='Sign In' className='w-9 h-9 cursor-pointer' />
+                                    <span>Sign in</span>
+                                </div>
                             </SignInButton>
                         </SignedOut>
                         <SignedIn >
@@ -91,7 +94,7 @@ function Header() {
                                 </button>
                             </Link>
                             <Link to={'/cart'} className='flex'>
-                                <button className="relative"><CartIcon />
+                                <button className="max-sm:hidden relative"><CartIcon />
                                     {
                                         items.length >= 1 ?
                                             <span className="ml-2 bg-black absolute top-[-10px] right-[-10px] text-lime-500 rounded-full p-1">{items.length}</span> : null
