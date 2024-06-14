@@ -48,8 +48,8 @@ function Card() {
                       </Link>
                     </div>
                     <div className='flex items-center gap-2'>
-                      <button className='mt-5 py-3 px-10 relative z-40 bg-transparent font-extrabold text-lg text-white border-transparent border-solid border-slate-500 hover:bg-white hover:border-white hover:text-black rounded-lg ease-in duration-300 max-[970px]:px-5 max-[970px]:py-2 max-[970px]:text-base max-[388px]:p-2 max-[388px]:text-xs' onClick={() => handleAdd(item)}>Купить</button>
-                      <button className='mt-5 py-3 px-10 relative z-40 border-solid border-white bg-white font-extrabold text-lg text-black rounded-lg hover:bg-transparent hover:border-solid hover:text-white ease-in duration-300 max-[970px]:px-5 max-[970px]:py-2 max-[970px]:text-base max-[388px]:p-2 max-[388px]:text-xs' onClick={() => handleAddOrder(item)}>В избранное</button>
+                      <button className='mt-5 py-3 px-10 relative z-40 bg-transparent font-extrabold text-lg text-white border-transparent border-solid border-slate-500 hover:bg-white hover:border-white hover:text-black rounded-lg ease-in duration-300 max-[970px]:px-5 max-[970px]:py-2 max-[970px]:text-base max-[388px]:p-2 max-[388px]:text-xs max-sm:pointer-events-none' onClick={() => handleAdd(item)}>Купить</button>
+                      <button className='mt-5 py-3 px-10 relative z-40 border-solid border-white bg-white font-extrabold text-lg text-black rounded-lg hover:bg-transparent hover:border-solid hover:text-white ease-in duration-300 max-[970px]:px-5 max-[970px]:py-2 max-[970px]:text-base max-[388px]:p-2 max-[388px]:text-xs max-sm:pointer-events-none' onClick={() => handleAddOrder(item)}>В избранное</button>
                     </div>
                   </div>
                 </SwiperSlide>

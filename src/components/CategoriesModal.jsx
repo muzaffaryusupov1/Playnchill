@@ -23,52 +23,71 @@ function CategoriesModal() {
     // Home
     const handleHome = () => {
         navigate('/')
-        location.reload()
+        dispatch(categoriesModalClose('categoriesmodal'))
     }
 
     // Cart
     const handleCart = () => {
+        dispatch(categoriesModalClose('categoriesmodal'))
         navigate('/cart')
-        location.reload()
     }
 
     // Favourite
     const handleFavourite = () => {
         navigate('/favourites')
-        location.reload()
+        dispatch(categoriesModalClose('categoriesmodal'))
     }
 
+    // Categories
     const handleCategories = () => {
         navigate('/category/survival-game-1')
-        location.reload()
+        dispatch(categoriesModalClose('categoriesmodal'))
+    }
+
+    // Advantages
+    const handleAdvantages = () => {
+        navigate('/advantages')
+        dispatch(categoriesModalClose('categoriesmodal'))
+    }
+
+    // Reviews
+    const handleReviews = () => {
+        navigate('/reviews')
+        dispatch(categoriesModalClose('categoriesmodal'))
+    }
+
+    // Support
+    const handleSupport = () => {
+        navigate('/support')
+        dispatch(categoriesModalClose('categoriesmodal'))
     }
 
     return (
         <div className='categories-modal'>
             <div className='absolute top-0 left-0 w-full h-full bg2 z-[1000]' onClick={handleClose}></div>
-            <div className="fixed top-0 left-0 w-[400px] h-full bg-slate-800 z-[10000] max-sm:w-[230px]">
-                <div className='px-7 pt-7 mb-4'>
+            <div className="fixed top-0 left-0 w-[400px] h-full bg-slate-900 z-[10000] max-sm:w-[230px]">
+                <div className='px-7 py-2 mt-5 mb-4 bg-slate-700 rounded-lg'>
                     <div className='flex items-center gap-2'>
                         <button onClick={handleCategories} className='font-bold text-3xl text-white max-sm:text-lg flex items-center'>Каталог
                             <ChevronRightIcon />
                         </button>
                     </div>
                 </div>
-                <div className='px-6 hidden max-sm:flex gap-4 mt-3 items-start flex-col'>
-                    <button onClick={handleHome} className='flex flex-col items-center gap-2 w-16'>
+                <div className='px-6 py-4 hidden max-sm:flex gap-5 mt-3 items-start flex-col bg-slate-700 rounded-lg'>
+                    <button onClick={handleHome} className='flex items-center gap-2'>
                         <HomeIcon className="fill-lime-400" />
                         Home
                     </button>
-                    <button onClick={handleCart} className='flex flex-col items-center gap-2 w-16'>
+                    <button onClick={handleCart} className='flex items-center gap-2'>
                         <CartIcon />
                         Cart
                     </button>
-                    <button onClick={handleFavourite} className='flex flex-col items-center gap-2 mt-1.5 w-16'>
+                    <button onClick={handleFavourite} className='flex items-center gap-2'>
                         <FavouritesIcon />
                         Favourite
                     </button>
                 </div>
-                <div className='px-6 mt-3 hidden max-md:block'>
+                <div className='px-6 mt-3 hidden max-md:block  bg-slate-700 rounded-lg mb-4'>
                     <h3 className='ml-1.5 font-bold text-2xl text-white'>
                         {user ? 'Profile:' : 'SignIn:'}
                     </h3>
@@ -85,10 +104,10 @@ function CategoriesModal() {
                         }} />
                     </SignedIn>
                 </div>
-                <div className='hidden max-sm:flex flex-col px-6 gap-2'>
-                    <Link className='ml-1.5 font-bold text-2xl text-white max-sm:text-lg' to={'/support'} reloadDocument={true}>Поддержка</Link>
-                    <Link className='ml-1.5 font-bold text-2xl text-white max-sm:text-lg w-[200px]' to={'/advantages'} reloadDocument={true}>Наши преимущества</Link>
-                    <Link className='ml-1.5 font-bold text-2xl text-white max-sm:text-lg' to={'/reviews'} reloadDocument={true}>Отзывы</Link>
+                <div className='hidden max-sm:flex flex-col items-start px-6 py-3 gap-2 bg-slate-700 rounded-lg'>
+                    <button onClick={handleSupport} className='font-bold text-xl text-white max-sm:text-lg'>Поддержка</button>
+                    <button onClick={handleAdvantages} className='font-bold text-xl text-white max-sm:text-lg w-[200px]'>Наши преимущества</button>
+                    <button onClick={handleReviews} className='font-bold text-xl text-white max-sm:text-lg'>Отзывы</button>
                 </div>
             </div>
         </div>

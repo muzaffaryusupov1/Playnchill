@@ -45,10 +45,10 @@ function SearchInput({ active, setActive }) {
         <div>
 
             <div className='flex items-center'>
-                <input type="text" id='search' placeholder='Поиск' className={active ? 'max-md:block absolute top-10 z-40 left-[-300px] w-[500px] py-6 px-7 pr-12 bg-slate-950 border border-solid border-slate-400 rounded-2xl focus:border-sky-500 ease-out duration-300 max-[510px]:w-[400px] max-[500px]:left-[-200px] max-[500px]:w-[350px] max-[400px]:w-[300px] max-[400px]:left-[-190px]' : 'w-[648px] max-[1060px]:w-96 max-[800px]:w-[300px] max-md:hidden max-[574px]:w-[200px] py-6 px-7 pr-12 bg-slate-950 border border-solid border-slate-700 rounded-2xl focus:border-sky-500 ease-out duration-300'}
+                <input type="text" id='search' placeholder='Поиск' className={active ? 'max-md:block absolute top-10 z-40 left-[-300px] w-[500px] py-6 px-7 pr-12 bg-slate-950 border border-solid border-slate-400 rounded-2xl focus:border-sky-500 ease-out duration-300 max-[510px]:w-[400px] max-[500px]:left-[-220px] max-[500px]:w-[350px] max-[400px]:w-[320px] max-[400px]:left-[-210px]' : 'w-[648px] max-[1060px]:w-96 max-[800px]:w-[300px] max-md:hidden max-[574px]:w-[200px] py-6 px-7 pr-12 bg-slate-950 border border-solid border-slate-700 rounded-2xl focus:border-sky-500 ease-out duration-300'}
                     value={input}
                     onChange={e => handleChange(e.target.value)} />
-                <div className={active ? "fixed w-screen h-screen top-0 z-30 left-0 bg-black/55" : 'hidden'} onClick={handleClose}></div>
+                <div className={active ? "fixed w-screen h-screen top-0 z-30 left-0 bg-black/55" : 'hidden'}></div>
                 <label htmlFor="search" className='absolute right-0 p-3 cursor-pointer max-md:hidden'>
                     <SearchIcon />
                 </label>
@@ -63,7 +63,7 @@ function SearchInput({ active, setActive }) {
                                         <img src={item.extraimg} alt={item.slug} className='w-full h-full object-cover' />
                                     </div>
                                     <div className='ml-5'>
-                                        <p className='mb-1 font-semibold text-lg max-lg:text-sm'>{item.title}</p>
+                                        <p className='mb-1 font-semibold text-lg max-lg:text-sm'>{item.title.split(' ').slice(0, 3).join(' ')}</p>
                                         <p className='font-normal text-base max-lg:text-xs'>{item.price.toLocaleString()} Р</p>
                                     </div>
                                 </div>

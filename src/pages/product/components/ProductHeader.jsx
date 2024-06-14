@@ -49,9 +49,9 @@ function ProductHeader({ product }) {
                                 <img src={product.image} alt={product.title} className='w-full h-full object-cover max-sm:object-contain' />
                             </div>
                         </div>
-                        <div className="content">
-                            <div className='flex flex-col gap-5 mb-5'>
-                                <h3 className='font-extrabold text-4xl text-white max-sm:text-xl mb-3'>{product.title}</h3>
+                        <div className="mb-4">
+                            <div className='flex flex-col gap-5 mb-5 max-sm:m-0'>
+                                <h3 className='font-extrabold text-4xl text-white max-sm:text-lg mb-3'>{product.title}</h3>
                             </div>
                             <div className='flex items-center gap-5 mb-5 max-[710px]:flex-wrap'>
                                 <p className='font-bold text-3xl text-white max-sm:text-lg'>{product.price.toLocaleString()} Р</p>
@@ -59,18 +59,8 @@ function ProductHeader({ product }) {
                                 {product.oldPrice ? <p className='font-bold text-3xl text-neutral-700 line-through max-sm:text-lg'>{product.oldPrice.toLocaleString()} Р</p> : null}
                             </div>
                             <div className='flex items-center max-md:flex-wrap max-[720px]:gap-3'>
-                                <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500 max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAddOrder}>В избранное</button>
-                                <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAdd}>В корзину</button>
-                            </div>
-                            <div className='my-6 flex flex-col gap-2'>
-                                {
-                                    product.attributes.slice(0, 3).map(item => (
-                                        <div className='flex gap-2 mt-2'>
-                                            <p className='font-normal text-lg text-white max-sm:text-base'>{item.title}:</p>
-                                            <p className='font-extrabold text-xl text-white max-sm:text-base'>{item.value}</p>
-                                        </div>
-                                    ))
-                                }
+                                <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500 max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base max-sm:pointer-events-none' onClick={handleAddOrder}>В избранное</button>
+                                <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base max-sm:pointer-events-none' onClick={handleAdd}>В корзину</button>
                             </div>
                         </div>
                     </div>

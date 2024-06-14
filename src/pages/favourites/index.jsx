@@ -65,8 +65,8 @@ function Favourites() {
                         <div>
                           <p className="font-normal text-base text-white mb-2 h-12 max-[574px]:w-2/4 max-[574px]:h-full max-md:text-sm max-[574px]:text-xs max-[465px]:text-[12px] max-[465px]:w-full max-[442px]:text-[10px]">{item.title.split(' ').slice(0, 3).join(' ')}</p>
                         </div>
-                        <div className='absolute top-2 right-3'>
-                          <button className='p-3 bg-neutral-400 rounded-full' onClick={() => handleUnOrder(item.id)}>
+                        <div className='absolute top-2 right-3 max-sm:top-0.5 max-sm:right-1'>
+                          <button className='p-3 bg-slate-300 rounded-full max-sm:p-1' onClick={() => handleUnOrder(item.id)}>
                             <LikedIcon />
                           </button>
                         </div>
