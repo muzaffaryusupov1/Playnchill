@@ -58,8 +58,8 @@ function Banner() {
                                             {
                                                 item.price === 0 ? null :
                                                     <div className="flex items-center gap-2.5">
-                                                        <button className="rounded-2xl border h-16 border-transparent border-solid hover:border-white hover:bg-transparent hover:text-white py-5 max-lg:py-2 max-md:hidden w-40 bg-white font-semibold text-base text-black ease-in duration-300 max-sm:pointer-events-none" onClick={() => handleAdd(item)}>В корзину</button>
-                                                        <button className="border h-16 border-white border-solid rounded-2xl py-5 max-lg:py-2 max-md:hidden w-40 font-semibold text-base text-white hover:bg-white hover:text-black hover:border-white ease-in duration-300 max-sm:pointer-events-none" onClick={() => handleAddFavourite(item)}>В избранное</button>
+                                                        <button className="rounded-2xl border h-16 border-transparent border-solid hover:border-white hover:bg-transparent hover:text-white py-5 max-lg:py-2 max-md:hidden w-40 bg-white font-semibold text-base text-black ease-in duration-300" onClick={() => handleAdd(item)}>В корзину</button>
+                                                        <button className="border h-16 border-white border-solid rounded-2xl py-5 max-lg:py-2 max-md:hidden w-40 font-semibold text-base text-white hover:bg-white hover:text-black hover:border-white ease-in duration-300" onClick={() => handleAddFavourite(item)}>В избранное</button>
                                                     </div>
                                             }
                                         </div>

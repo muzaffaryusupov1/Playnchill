@@ -20,7 +20,7 @@ function CartItems() {
                 ))
             }
             <div className="flex justify-end mt-3">
-                <button onClick={handleRemove} className="border border-solid border-white font-bold text-base text-white p-4 rounded-2xl bg-transparent hover:bg-white hover:text-slate-800 ease-out duration-200">Удалить все</button>
+                <button onClick={handleRemove} className="border border-solid border-white font-bold text-base text-white p-4 rounded-2xl bg-transparent hover:bg-white hover:text-slate-800 ease-out duration-200 max-sm:p-1 max-sm:border-transparent max-sm:text-sm max-sm:mr-2 max-sm:hover:bg-transparent max-sm:hover:text-white">Удалить все</button>
             </div>
         </div>
     )

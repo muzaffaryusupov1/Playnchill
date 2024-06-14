@@ -22,7 +22,7 @@ function Cart() {
                             <div className="flex flex-col items-center justify-center gap-3">
                                 <h3 className="font-bold text-xl text-white max-md:text-base">В корзине пока нет товаров</h3>
                                 <p className="font-medium text-lg text-white max-sm:text-sm max-sm:text-center">Начните с подборок на главной странице или найдите нужный товар через поиск</p>
-                                <button className="bg-transparent border border-solid border-neutral-500 py-3 px-5 flex items-center justify-center mb-4 rounded-lg hover:border-transparent hover:bg-white hover:text-black ease-in-out duration-200 max-sm:text-xs max-sm:py-2 max-sm:px-3 max-sm:mb-2 max-sm:pointer-events-none" onClick={handleHome}>На главную</button>
+                                <button className="bg-transparent border border-solid border-neutral-500 py-3 px-5 flex items-center justify-center mb-4 rounded-lg hover:border-transparent hover:bg-white hover:text-black ease-in-out duration-200 max-sm:text-xs max-sm:py-2 max-sm:px-3 max-sm:mb-2" onClick={handleHome}>На главную</button>
                             </div>
                         </div>
                         :

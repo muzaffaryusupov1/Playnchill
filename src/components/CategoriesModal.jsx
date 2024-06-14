@@ -1,13 +1,12 @@
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { getCategoriesList } from '../store/actions/homeActions'
 import { categoriesModalClose } from '../store/slices/categoriesmodal'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { CartIcon, ChevronRightIcon, FavouritesIcon, HomeIcon } from '../assets/icons'
 import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 
 function CategoriesModal() {
-    const { categories } = useSelector(state => state.home)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { user } = useAuth()
@@ -88,12 +87,12 @@ function CategoriesModal() {
                     </button>
                 </div>
                 <div className='px-6 mt-3 hidden max-md:block  bg-slate-700 rounded-lg mb-4'>
-                    <h3 className='ml-1.5 font-bold text-2xl text-white'>
+                    <h3 className='font-bold text-2xl text-white'>
                         {user ? 'Profile:' : 'SignIn:'}
                     </h3>
                     <SignedOut>
                         <SignInButton mode='modal'>
-                            <h3 className='ml-1.5 font-bold text-lg text-white mt-2 max-sm:text-lg cursor-pointer'>Login</h3>
+                            <h3 className='font-bold text-lg text-white mt-2 max-sm:text-lg cursor-pointer'>Signin and Login</h3>
                         </SignInButton>
                     </SignedOut>
                     <SignedIn >
@@ -106,7 +105,7 @@ function CategoriesModal() {
                 </div>
                 <div className='hidden max-sm:flex flex-col items-start px-6 py-3 gap-2 bg-slate-700 rounded-lg'>
                     <button onClick={handleSupport} className='font-bold text-xl text-white max-sm:text-lg'>Поддержка</button>
-                    <button onClick={handleAdvantages} className='font-bold text-xl text-white max-sm:text-lg w-[200px]'>Наши преимущества</button>
+                    <button onClick={handleAdvantages} className='font-bold text-xl text-white max-sm:text-lg text-start'>Наши преимущества</button>
                     <button onClick={handleReviews} className='font-bold text-xl text-white max-sm:text-lg'>Отзывы</button>
                 </div>
             </div>

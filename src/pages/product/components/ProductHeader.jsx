@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ArrowBackIcon, CheckMarkIcon, ChevronLeftIcon, ChevronRightIcon, HeartIcon } from '../../../assets/icons'
+import { ArrowBackIcon, CheckMarkIcon, ChevronLeftIcon, ChevronRightIcon, HeartIcon, RatingIcon, WhiteRatingIcon } from '../../../assets/icons'
 import { useDispatch } from 'react-redux'
 import { imgModalOpen } from '../../../store/slices/imgmodal'
 import { addCart } from '../../../store/slices/cart'
@@ -58,9 +58,57 @@ function ProductHeader({ product }) {
                                 <p className='font-bold text-2xl text-lime-500 max-sm:text-lg'>-{product.discount}%</p>
                                 {product.oldPrice ? <p className='font-bold text-3xl text-neutral-700 line-through max-sm:text-lg'>{product.oldPrice.toLocaleString()} Р</p> : null}
                             </div>
+                            <div className='flex items-center mb-5 mt-7 max-sm:mb-2 max-sm:mt-4'>
+                                {product.sold ?
+                                    <div className='flex items-center gap-3 mr-4 max-sm:gap-1'>
+                                        <span className='text-lg max-sm:text-sm'>Доступен для продажи</span>
+                                        <span><CheckMarkIcon /></span>
+                                    </div>
+                                    : <span>В продаже нет</span>}
+                                <div className='flex items-center gap-4 max-sm:gap-2'>
+                                    <div className='flex items-center gap-1'>
+                                        <WhiteRatingIcon />
+                                        <WhiteRatingIcon />
+                                        <WhiteRatingIcon />
+                                        <RatingIcon />
+                                        <RatingIcon />
+                                    </div>
+                                    <div className='flex items-center gap-1.5'>
+                                        <p className='text-xl font-medium text-white max-sm:text-base'>{product.rating}</p>
+                                        <p className='text-xl font-medium text-white max-sm:text-base'>Рейтинги</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='pt-3 border border-solid border-gray-500 border-t border-b-0 border-r-0 border-l-0'>
+                                {
+                                    product.attributes.slice(0, 2).map((i, key) => (
+                                        <div className='flex gap-2 mb-5 mt-2 max-sm:mb-2' key={key}>
+                                            <p className='font-normal text-lg text-white max-sm:text-base'>{i.title}:</p>
+                                            <p className='font-extrabold text-xl text-white max-sm:text-base'>{i.value}</p>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                             <div className='flex items-center max-md:flex-wrap max-[720px]:gap-3'>
-                                <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500 max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base max-sm:pointer-events-none' onClick={handleAddOrder}>В избранное</button>
-                                <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base max-sm:pointer-events-none' onClick={handleAdd}>В корзину</button>
+                                <button className='rounded-2xl py-6 px-9 bg-lime-500 mr-3 border border-solid border-transparent ease-in-out duration-300 hover:bg-transparent hover:border hover:border-solid hover:border-neutral-500 max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAddOrder}>В избранное</button>
+                                <button className='rounded-2xl border border-solid border-neutral-500 py-6 px-9 bg-transparent mr-5 ease-in-out duration-300 hover:bg-lime-500 hover:border-transparent max-sm:py-3 max-sm:px-5 max-sm:rounded-xl max-sm:text-base' onClick={handleAdd}>В корзину</button>
+                            </div>
+                            <div className='flex items-center gap-3 my-6'>
+                                <p className='font-extrabold text-xl'>Доступен на:</p>
+                                <div className='flex items-center gap-2'>
+                                    {
+                                        product.windows ?
+                                            <div className='w-8 h-7'>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="windows logo" className='w-full h-full object-contain hover:scale-110 cursor-pointer' />
+                                            </div> : null
+                                    }
+                                    {
+                                        product.macOs ?
+                                            <div className='w-8 h-7'>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Icon-Mac.svg/2048px-Icon-Mac.svg.png" alt="windows logo" className='w-full h-full object-contain hover:scale-110 cursor-pointer' />
+                                            </div> : null
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,7 +123,7 @@ function ProductHeader({ product }) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
     )
 }

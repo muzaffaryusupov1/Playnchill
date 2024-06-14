@@ -18,7 +18,7 @@ function CartCheckout() {
                     <p className="font-medium text-lg text-neutral-500 max-md:text-base max-sm:text-sm">Покупая данный товар, я подтверждаю,что ознакомился и согласен с <span className="text-sky-500 cursor-pointer">условиями</span> и <span className="text-sky-500 cursor-pointer">условия магазина</span></p>
                 </div>
             </div>
-            <div className="border-2 border-solid border-neutral-500 rounded-3xl p-7 flex flex-col items-center ml-12 mt-5 max-[981px]:mt-0 max-[981px]:h-[100%] max-[490px]:p-3 max-[490px]:ml-3">
+            <div className="border-2 border-solid border-neutral-500 rounded-3xl p-7 flex flex-col items-center ml-12 mt-5 max-[981px]:mt-0 max-[981px]:h-[100%] max-[490px]:p-3 max-[490px]:ml-3 max-[420px]:hidden">
                 <p className="font-normal text-lg text-white max-md:text-base max-sm:text-sm">
                     <span className="font-medium text-lime-500 mr-2">%</span> Если у вас есть купон на скидку, Вы сможете ввести его на следующем этапе
                 </p>

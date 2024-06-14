@@ -50,7 +50,7 @@ function ReleatedItems() {
                       <button className='hidden group-hover:block bg-white rounded-full p-2.5 absolute top-5 right-3 max-[602px]:block max-[602px]:top-2 max-[602px]:right-1 max-[602px]:p-1.5' onClick={() => handleAddOrder(item)}>
                         <FavouritesIcon />
                       </button>
-                      <button className='hidden transition group-hover:duration-300 group-hover:block absolute bottom-1/4 h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg text-center max-[810px]:bottom-[110px] max-[810px]:right-[20px] max-sm:w-[200px] max-[602px]:block max-[574px]:m-0 max-sm:pointer-events-none' onClick={() => handleAdd(item)}>
+                      <button className='hidden transition group-hover:duration-300 group-hover:block absolute bottom-1/4 h-14 border-solid border-transparent bg-lime-500 w-64 rounded-xl p-3 mb-5 hover:bg-transparent hover:border-solid hover:border-white font-bold text-lg text-center max-[810px]:bottom-[110px] max-[810px]:right-[20px] max-sm:w-[200px] max-[602px]:block max-[574px]:m-0' onClick={() => handleAdd(item)}>
                         В корзину
                       </button>
                     </div>
